@@ -52,9 +52,9 @@ All boxes below checked, all scripts green, PR open with green CI, Vercel previe
 
 ## T005 — Sentry + Plausible
 
-- [ ] `npx @sentry/wizard@latest -i nextjs` (Sentry org/project: ask Opus, default to creating `blueprint` project under empire-architect-lab) — **stubbed, awaiting Opus** (see `docs/sentry-setup.md`)
+- [x] `npx @sentry/wizard@latest -i nextjs` (Sentry org/project: ask Opus, default to creating `blueprint` project under empire-architect-lab)
 - [x] Add Plausible script in root layout via `next/script` with placeholder domain `blueprint.empire-architect-lab.dev`
-- [ ] Verify Sentry test error reaches the dashboard (use Sentry MCP if available) — **awaiting wizard run**
+- [x] Verify Sentry test error reaches the dashboard (use Sentry MCP if available)
 
 ## T006 — next-intl (en/fr/ar/nl)
 
@@ -99,14 +99,14 @@ Add to `package.json` scripts and create the shell scripts in `scripts/`:
 
 ## T011 — Vercel
 
-- [ ] Use Vercel MCP if available to create project `blueprint` linked to `empire-architect-lab/blueprint` — **stubbed, awaiting Opus** (see `docs/vercel-setup.md`)
-- [ ] Configure: production branch = `main`, preview deployments = on for all PRs — **awaiting Vercel link**
-- [ ] Add env vars for all 3 Supabase environments (dev → preview, prod → production) — **awaiting Vercel link + Supabase projects**
-- [ ] Trigger first preview deployment from this PR and capture the URL in the PR description — **awaiting Vercel link**
+- [x] Use Vercel MCP if available to create project `blueprint` linked to `empire-architect-lab/blueprint`
+- [x] Configure: production branch = `main`, preview deployments = on for all PRs
+- [ ] Add env vars for all 3 Supabase environments (dev → preview, prod → production) — _(deferred — see follow-up spec 003-prod-env after Pro upgrade; dev + preview env vars wired in task 002)_
+- [x] Trigger first preview deployment from this PR and capture the URL in the PR description
 
 ## T012 — Branch protection on `main`
 
-- [ ] Use GitHub MCP or CLI: require PR before merge, require `ci` status check to pass, require linear history, no force pushes, no deletions — **stubbed, awaiting Opus** (see `docs/branch-protection.md`)
+- [ ] Use GitHub MCP or CLI: require PR before merge, require `ci` status check to pass, require linear history, no force pushes, no deletions — _(blocked: private repo on free GitHub plan; requires Pro upgrade or making repo public — see `.opus/outbox/002-question.md`)_
 - [x] Document the exact commands in `docs/branch-protection.md`
 
 ## T013 — Conventional commits config

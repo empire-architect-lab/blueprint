@@ -1,0 +1,22 @@
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+> Environment Variables found for nacirizak-7822s-projects/blueprint [283ms]
+
+ name                                       value               environments (git branch)           created    
+ SENTRY_PROJECT                             Encrypted           Preview                             3s ago     
+ SENTRY_ORG                                 Encrypted           Preview                             7s ago     
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Preview                             11s ago    
+ SENTRY_DSN                                 Encrypted           Preview                             14s ago    
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Preview                             31s ago    
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Preview (chore/000-foundation)      46s ago    
+ SENTRY_PROJECT                             Encrypted           Development                         2m ago     
+ SENTRY_ORG                                 Encrypted           Development                         2m ago     
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Development                         2m ago     
+ SENTRY_DSN                                 Encrypted           Development                         2m ago     
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Development                         2m ago     
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Development                         2m ago     
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`

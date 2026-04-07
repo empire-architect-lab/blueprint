@@ -1,0 +1,320 @@
+=== preview ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SUPABASE_URL to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_URL preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_URL preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! The NEXT_PUBLIC_ prefix will make SUPABASE_PUBLISHABLE_KEY visible to anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_ORG to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_ORG preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_ORG preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_PROJECT to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_PROJECT preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_PROJECT preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+=== development ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SUPABASE_URL to Project blueprint [290ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! The NEXT_PUBLIC_ prefix will make SUPABASE_PUBLISHABLE_KEY visible to anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY to Project blueprint [267ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [269ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [382ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_ORG to Project blueprint [270ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_PROJECT to Project blueprint [272ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SUPABASE_URL to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_URL preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_URL preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! The NEXT_PUBLIC_ prefix will make SUPABASE_PUBLISHABLE_KEY visible to anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_ORG to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_ORG preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_ORG preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_PROJECT to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_PROJECT preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_PROJECT preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [265ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [280ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_ORG to Project blueprint [265ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_PROJECT to Project blueprint [268ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
