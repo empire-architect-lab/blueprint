@@ -1,0 +1,44 @@
+=== typecheck ===
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+EXIT=0
+=== lint ===
+
+Checking formatting...
+All matched files use Prettier code style!
+EXIT=0
+=== test ===
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:34:18
+   Duration  561ms (transform 18ms, setup 0ms, import 29ms, tests 4ms, environment 435ms)
+
+EXIT=0
+=== e2e ===
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (354ms)
+
+  1 passed (10.1s)
+EXIT=0
+=== secrets ===
+[90m11:34PM[0m [32mINF[0m 30 commits scanned.
+[90m11:34PM[0m [32mINF[0m scan completed in 124ms
+[90m11:34PM[0m [32mINF[0m no leaks found
+EXIT=0
+=== audit ===
+found 0 vulnerabilities
+EXIT=0
+=== rls ===
+check-rls: OK
+EXIT=0
+=== tenant ===
+check-tenant-id: OK
+EXIT=0
+=== forbidden ===
+check-forbidden-terms: OK
+EXIT=0
+=== i18n ===
+check-i18n: OK
+EXIT=0
