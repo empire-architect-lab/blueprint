@@ -1,0 +1,17 @@
+Task 015 — Bot approval of PR #8
+
+Pre-flight (gh pr view 8):
+  state=OPEN, mergeable=MERGEABLE
+  headRefName=chore/013-constitution-canonical
+  headRefOid=817d1464b5f95e89a5a2478ce9cbafabd80e2f36 (matches expected 817d146)
+  CI: ci=SUCCESS (run 24104449311), Vercel=SUCCESS, Vercel Preview Comments=SUCCESS
+  reviews=[]
+
+Bot review submitted via fresh installation token (npm run -s bot:token), token discarded immediately.
+
+Post-check:
+  latestReviews[0].author.login = blueprint-code-agent
+  latestReviews[0].state = APPROVED
+  submittedAt = 2026-04-07T21:14:37Z
+
+Result: APPROVED by blueprint-code-agent (bot). Branch protection satisfied without admin bypass.
