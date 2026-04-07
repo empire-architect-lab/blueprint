@@ -1,0 +1,4 @@
+# Force LF line endings in the working tree on all platforms.
+# Prevents prettier --check failures on Windows where core.autocrlf=true
+# would otherwise convert checked-out files to CRLF.
+* text=auto eol=lf
