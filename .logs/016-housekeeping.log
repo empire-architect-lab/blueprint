@@ -1,0 +1,22 @@
+Task 016 — housekeeping (ROADMAP tech-debt + security notes + section 8 re-audit)
+
+Branch: chore/016-housekeeping
+Commit: 7ec2477 chore(housekeeping): ROADMAP tech-debt, security notes, section 8 re-audit
+
+Files changed:
+  ROADMAP.md (appended Tech debt / future section, 3 items)
+  docs/security.md (NEW)
+  .opus/outbox/014-audit-report.md (appended Section 8 re-audit block)
+
+Section 8 re-audit (against main HEAD 1f10b7d):
+  diff memory/constitution.md .specify/memory/constitution.md → exit 1 (expected: pointer vs canonical)
+  head .specify/memory/constitution.md → real 10-principle constitution
+  head memory/constitution.md → 5-line pointer text
+  Verdict: PASS
+
+Pre-push hook: all 9 scripts OK (typecheck, lint, vitest, scan:secrets, scan:rls, scan:tenant, scan:forbidden, scan:i18n)
+
+PR #9 opened against main
+CI: ci=SUCCESS (run 24105304794), Vercel=SUCCESS, Vercel Preview Comments=SUCCESS
+mergeable: MERGEABLE
+state: OPEN

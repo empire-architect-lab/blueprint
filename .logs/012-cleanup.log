@@ -1,0 +1,28 @@
+Task 012 — cleanup log
+
+Part A — delete merged branch spec/001-the-cursor
+  git fetch origin --prune → main fast-forwarded 17eeff6..5537768 (PR #2 merged)
+  git push origin --delete spec/001-the-cursor → "- [deleted]  spec/001-the-cursor"
+  git branch -d spec/001-the-cursor → (no local branch existed)
+  Result: BRANCH DELETED ✅
+
+Part B — diff constitutions
+  diff memory/constitution.md .specify/memory/constitution.md → exit 1 (differ)
+  See .logs/012-constitution-diff.log
+
+  Inspection result:
+    memory/constitution.md (45 lines) = the REAL Blueprint Constitution
+      with 10 numbered principles (SDD, multi-tenant, CI gate, conventional commits,
+      file size limits, a11y, i18n, observability, secrets, bookkeeping)
+    .specify/memory/constitution.md (73 lines) = unfilled spec-kit TEMPLATE
+      with placeholder fields like [PROJECT_NAME], [PRINCIPLE_1_NAME],
+      [PRINCIPLE_1_DESCRIPTION], [SECTION_2_NAME], [GOVERNANCE_RULES],
+      [CONSTITUTION_VERSION], etc.
+
+  The 45-line file is NOT a subset of the 73-line file. The 73-line file contains
+  ZERO real content. Per task instructions, STOPPED and did not create a PR.
+
+  Branch chore/012-unify-constitution was created locally, then deleted unused
+  (git branch -D chore/012-unify-constitution).
+
+Part B PR: NOT CREATED — premise of Opus decision was wrong, awaiting redirection.

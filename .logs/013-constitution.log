@@ -1,0 +1,36 @@
+Task 013 — unify constitution (Option 1: flip direction)
+
+Branch: chore/013-constitution-canonical
+
+Part A — copy real content into spec-kit path
+  cp memory/constitution.md .specify/memory/constitution.md
+  diff memory/constitution.md .specify/memory/constitution.md → 0 (verified before Part B)
+
+Part B — turn old path into pointer
+  memory/constitution.md replaced with the exact pointer text from task 013
+
+Part C — reference updates
+  ../CLAUDE.md (parent dir, outside repo) — 2 lines updated:
+    "Read ROADMAP.md and memory/constitution.md before any decision" → ".specify/memory/..."
+    "memory/constitution.md — the rules every spec must follow" → ".specify/memory/..."
+  ROADMAP.md:19 — source-of-truth reference updated
+  docs/code-agent-identity.md:173 — Principle 3 reference path updated
+
+  Skipped (intentional, historical / upstream / out-of-scope):
+    specs/000-foundation/tasks.md — historical task checklist; the "Create memory/constitution.md" item documents what was done at the time
+    .opus/archive/* and .opus/inbox/* and .opus/outbox/* — historical/dispatch records, do not rewrite history
+    .claude/skills/speckit-* — upstream spec-kit skill files; their references to .specify/memory/constitution.md are already correct
+
+Part D — commit + PR
+  Commit 817d146 chore(constitution): make .specify/memory/constitution.md canonical, point old path to it
+  4 files changed, 28 insertions(+), 96 deletions(-)
+  Pre-commit/pre-push hooks: all 9 scripts OK
+  Pushed to origin/chore/013-constitution-canonical
+  PR #8 opened against main
+
+CI:
+  ci: SUCCESS (run 24104449311)
+  Vercel: SUCCESS
+  Vercel Preview Comments: SUCCESS
+  mergeable: MERGEABLE
+  state: OPEN

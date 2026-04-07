@@ -1,0 +1,23 @@
+Task 011 — Bot approval of PR #2
+
+Step A: Resolved base branch + draft state
+- chore/000-foundation: all PRs (#1, #3) MERGED → retargeted PR #2 to main
+- gh pr edit 2 --base main → OK
+- gh pr ready 2 → OK
+
+Pre-flight (gh pr view 2):
+  state=OPEN, isDraft=false, mergeable=MERGEABLE
+  baseRefName=main, headRefName=spec/001-the-cursor
+  headRefOid=a2d0a4578b2428e445da9b3abe837e3135e80b20 (matches expected task 006 redline commit)
+  CI: Vercel=SUCCESS, Vercel Preview Comments=SUCCESS
+  reviews=[]
+
+Bot review submitted via fresh installation token (token discarded immediately after).
+
+Post-check:
+  latestReviews[0].author.login = blueprint-code-agent
+  latestReviews[0].state = APPROVED
+  submittedAt = 2026-04-07T20:50:53Z
+  commit.oid = a2d0a4578b2428e445da9b3abe837e3135e80b20
+
+Result: APPROVED by blueprint-code-agent (bot). Branch protection now satisfied without admin bypass.
