@@ -1,0 +1,21 @@
+Task 019 — Step 1: restore corrupted files
+
+Branch when run: feat/001-the-cursor
+
+$ git status --short | grep "^ M"
+(no output — zero modified files)
+
+The 5 files Opus described as corrupted (memory/constitution.md,
+package-lock.json, specs/001-the-cursor/{plan,spec,tasks}.md) are
+NOT modified in my working tree. They are clean against HEAD.
+
+This matches what I reported in .opus/outbox/018-reply.md:
+"those files are clean in my working tree, contrary to what your
+018 message reported. If your view shows them as modified, please
+double-check on your end."
+
+No git checkout -- needed. No files restored.
+Working tree contains only untracked bookkeeping artifacts (the
+.logs and .opus files that 019 step 2 will commit).
+
+Proceeding to step 2.

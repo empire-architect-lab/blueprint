@@ -1,0 +1,12 @@
+Task 010 — PR #3 bot approval: ABORTED.
+
+Pre-flight `gh pr view 3 --json state,mergeable,statusCheckRollup`:
+  state=MERGED, mergedAt=2026-04-07T20:09:18Z, mergedBy=empire-architect-lab (human, is_bot=false)
+  reviews=[] (empty — merged with admin bypass, no review submitted)
+  CI: ci=SUCCESS, Vercel=SUCCESS
+
+PR #3 was already merged before this task ran. No bot review submitted.
+The end-to-end "author ≠ approver via bot" flow was NOT exercised on PR #3.
+Next opportunity: PR #2 (spec/001-the-cursor) once Opus signs off on the redlines.
+
+No GH_TOKEN was used. Token discarded.
