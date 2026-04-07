@@ -47,12 +47,12 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T004 — i18n strings and next-intl wiring for M1 (en/fr/ar/nl)
 
-- [ ] Verify `next-intl` middleware is already configured from foundation T007 for all four locales (`en`, `fr`, `ar`, `nl`); wire any missing locale minimally
-- [ ] Add new `cursor.*` and `hero.*` namespaces to `messages/en.json` with all visitor-facing strings from `spec.md` (typed command, skip label, replay label, reduced-motion subtitle, hero headline, metadata format string). English is human-written and canonical.
-- [ ] Add the same keys to `messages/fr.json`, `messages/ar.json`, `messages/nl.json` as stub translations. Literal English copy is an acceptable stub. Every key must exist in every locale file or `scripts/check-i18n.sh` will fail.
-- [ ] Create or append to `messages/_review.md` listing every stubbed key per locale (format: `## fr` / `- cursor.skipLabel` etc.) so a human reviewer can find them later
-- [ ] RTL spot check: confirm `ar` renders right-to-left in dev (`<html dir="rtl">` when locale is `ar`) even with stub strings
-- [ ] Run `scripts/check-i18n.sh` — must pass (no hardcoded English in any new component, all keys present in all four locales)
+- [x] Verify `next-intl` middleware is already configured from foundation T007 for all four locales (`en`, `fr`, `ar`, `nl`); wire any missing locale minimally
+- [x] Add new `cursor.*` and `hero.*` namespaces to `messages/en.json` with all visitor-facing strings from `spec.md` (typed command, skip label, replay label, reduced-motion subtitle, hero headline, metadata format string). English is human-written and canonical.
+- [x] Add the same keys to `messages/fr.json`, `messages/ar.json`, `messages/nl.json` as stub translations. Literal English copy is an acceptable stub. Every key must exist in every locale file or `scripts/check-i18n.sh` will fail.
+- [x] Create or append to `messages/_review.md` listing every stubbed key per locale (format: `## fr` / `- cursor.skipLabel` etc.) so a human reviewer can find them later
+- [x] RTL spot check: confirm `ar` renders right-to-left in dev (`<html dir="rtl">` when locale is `ar`) even with stub strings
+- [x] Run `scripts/check-i18n.sh` — must pass (no hardcoded English in any new component, all keys present in all four locales)
 
 ## T005 — SSR-safe hooks
 

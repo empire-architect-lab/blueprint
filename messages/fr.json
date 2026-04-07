@@ -1,5 +1,15 @@
 {
   "home": {
     "title": "Plan directeur"
+  },
+  "cursor": {
+    "typedCommand": "$ git log --oneline | head -1",
+    "skipLabel": "Skip cinematic intro",
+    "replayLabel": "Replay cinematic intro",
+    "reducedMotionSubtitle": "Cinematic intro disabled per your motion preferences."
+  },
+  "hero": {
+    "headline": "Built by the process it teaches.",
+    "metadata": "commit {sha} · {specs} specs · {tasks} tasks · {lies} lies"
   }
 }
