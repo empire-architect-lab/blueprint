@@ -1,0 +1,55 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 test
+> vitest run tests/unit/truncate.test.ts tests/unit/head-commit-fallback.test.ts
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  00:05:25
+   Duration  616ms (transform 46ms, setup 0ms, import 70ms, tests 12ms, environment 932ms)
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+[[33mwarn[39m] tests/unit/head-commit-fallback.test.ts
+[[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  4 passed (4)
+      Tests  12 passed (12)
+   Start at  00:05:49
+   Duration  633ms (transform 125ms, setup 0ms, import 163ms, tests 14ms, environment 1.90s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+[2m[WebServer] [22m[33m[1m⚠[22m[39m The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[2m[WebServer] [22m[33m[1m⚠[22m[39m Using edge runtime on a page currently disables static generation for that page
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (346ms)
+
+  1 passed (10.1s)
