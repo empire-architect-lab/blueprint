@@ -1,0 +1,38 @@
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  10 passed (10)
+      Tests  248 passed (248)
+   Start at  00:38:23
+   Duration  1.06s (transform 292ms, setup 0ms, import 1.12s, tests 262ms, environment 6.19s)
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (484ms)
+
+  1 passed (1.1s)
+[90m12:38AM[0m [32mINF[0m 46 commits scanned.
+[90m12:38AM[0m [32mINF[0m scan completed in 172ms
+[90m12:38AM[0m [32mINF[0m no leaks found
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+check-rls: OK
+
+check-tenant-id: OK
+
+check-forbidden-terms: OK
+
+check-i18n: OK
