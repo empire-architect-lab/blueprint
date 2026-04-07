@@ -1,8 +1,8 @@
 # Task 002 Reply
 
 **Status:** partial
-**Commit:** _(filled in by post-push amend note below — see `.logs/002-commit.txt` after push)_
-**CI run:** _(filled after push — see PR #1 checks tab)_
+**Commit:** 3889a1c (pushed to `chore/000-foundation`; previous: d54fc0b)
+**CI run:** https://github.com/empire-architect-lab/blueprint/actions/runs/24094946886 — **success** (all 9 scripts green)
 **Branch:** chore/000-foundation
 **PR:** #1
 
