@@ -71,12 +71,12 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T007 — Terminal typer component
 
-- [ ] `src/components/cursor/terminal-typer.tsx` — client component
-- [ ] Props: `command: string`, `charDelayMs: number`, `onComplete: () => void`
-- [ ] Renders a `<pre>` with a blinking caret; uses `useEffect` + `setInterval` to emit characters; calls `onComplete` at the end
-- [ ] Respects `useReducedMotion` — if reduced, calls `onComplete` immediately with no typing
-- [ ] Unit test (vitest + @testing-library/react): advance fake timers, assert characters appear, assert `onComplete` fires
-- [ ] Unit test green
+- [x] `src/components/cursor/terminal-typer.tsx` — client component
+- [x] Props: `command: string`, `charDelayMs: number`, `onComplete: () => void`
+- [x] Renders a `<pre>` with a blinking caret; uses `useEffect` + `setInterval` to emit characters; calls `onComplete` at the end
+- [x] Respects `useReducedMotion` — if reduced, calls `onComplete` immediately with no typing
+- [x] Unit test (vitest + @testing-library/react): advance fake timers, assert characters appear, assert `onComplete` fires
+- [x] Unit test green
 
 ## T008 — Skip link + replay button
 
