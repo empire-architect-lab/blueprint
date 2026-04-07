@@ -1,0 +1,1 @@
+npm run typecheck && npm run lint && npm run test && npm run scan:secrets && npm run scan:rls && npm run scan:tenant && npm run scan:forbidden && npm run scan:i18n
