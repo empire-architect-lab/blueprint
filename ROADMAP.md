@@ -16,7 +16,7 @@ The Blueprint is the rehearsal before the NissMatch web rebuild. If we can't shi
 
 ## Source of truth
 
-This file is one of two sources of truth (the other is `memory/constitution.md`). If anything contradicts this, this document wins.
+This file is one of two sources of truth (the other is `.specify/memory/constitution.md`). If anything contradicts this, this document wins.
 
 ---
 

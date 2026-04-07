@@ -1,73 +1,45 @@
-# [PROJECT_NAME] Constitution
+# Blueprint Constitution
 
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+These principles bind every spec, every task, every commit. If a spec contradicts the constitution, the constitution wins.
 
-## Core Principles
+## 1. Spec-Driven Development is the only process. No code without a spec.
 
-### [PRINCIPLE_1_NAME]
+Every feature, fix, refactor, or chore begins life in `specs/<NNN>-<slug>/`. The flow is `/speckit-specify → /speckit-plan → /speckit-tasks → /speckit-implement`. Code Agent never invents work; Cowork Opus dispatches via spec files. The single exception is this foundation task (000) — from spec 001 onward, no exceptions.
 
-<!-- Example: I. Library-First -->
+## 2. Multi-tenant by default. Every table has `tenant_id`. Every query filters by it. Every RLS policy enforces it.
 
-[PRINCIPLE_1_DESCRIPTION]
+Blueprint is multi-tenant from the first migration. Every Postgres table includes `tenant_id uuid not null`. Every Supabase query passes `.eq('tenant_id', TENANT_ID)`. Every RLS policy references `tenant_id = current_setting('app.tenant_id')::uuid`. The `scan:rls` and `scan:tenant` scripts enforce this in CI — there is no manual review fallback.
 
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## 3. CI is the gate. Nothing merges without green: typecheck, lint, unit, e2e, gitleaks, npm audit, RLS check, tenant check, forbidden terms, i18n.
 
-### [PRINCIPLE_2_NAME]
+Branch protection on `main` requires the `ci` status check to pass. The 9 non-negotiable scripts run on every PR. A red check blocks merge — no overrides, no "just this once". If a script is wrong, fix the script in its own PR, do not bypass it.
 
-<!-- Example: II. CLI Interface -->
+PRs are authored by Code Agent (`blueprint-code-agent[bot]` or equivalent machine identity) and approved by Chainbeard. Self-approval is impossible by GitHub rule and forbidden by this constitution.
 
-[PRINCIPLE_2_DESCRIPTION]
+## 4. Conventional commits. `feat|fix|chore|refactor|docs|test(scope): subject`.
 
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+Every commit message is parsed by commitlint via the Husky `commit-msg` hook. Subjects are imperative, lowercase, under 72 characters. Scope identifies the feature or area. This is enforced locally and in CI — non-conforming commits cannot be pushed.
 
-### [PRINCIPLE_3_NAME]
+## 5. No file > 500 lines. No `console.log`. No `@ts-ignore`. No `any` without a comment.
 
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+Files over 500 lines must be split. `console.log` is replaced with structured logging or removed. `@ts-ignore` is forbidden — fix the type. `any` requires an inline comment justifying why no narrower type is possible. The `scan:forbidden` script catches violations in CI.
 
-[PRINCIPLE_3_DESCRIPTION]
+## 6. Accessibility is non-negotiable. axe must pass on every page.
 
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+Every Playwright e2e test runs `@axe-core/playwright` against the rendered page and fails on any violation. Color contrast, focus states, semantic HTML, ARIA labels, keyboard navigation — all required, all tested. This is not optional polish; it is launch-blocking.
 
-### [PRINCIPLE_4_NAME]
+## 7. i18n is non-negotiable. en, fr, ar, nl. RTL works.
 
-<!-- Example: IV. Integration Testing -->
+Every user-facing string lives in `messages/{en,fr,ar,nl}.json` and is rendered through `t()` from next-intl. The `scan:i18n` script fails if any key in `en.json` is missing in any other locale. Arabic is right-to-left and the layout must adapt — this is verified visually in preview deploys.
 
-[PRINCIPLE_4_DESCRIPTION]
+## 8. Observability from day one. Sentry on every error, Plausible on every page.
 
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Sentry is wired into client, server, and edge runtimes from the first deploy. Every uncaught error reaches the dashboard. Plausible tracks every page view with no PII, no cookies, no consent banner needed. Observability is not added later — it is in the foundation.
 
-### [PRINCIPLE_5_NAME]
+## 9. Secrets never live in the repo. gitleaks is the gate.
 
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+`.env` files are gitignored. Only `.env.example` is committed, with placeholder values. The `scan:secrets` script runs gitleaks on every PR. Any committed secret is treated as a security incident, rotated immediately, and the commit history is rewritten. Real secrets live in Vercel env vars and the Supabase dashboard — nowhere else.
 
-[PRINCIPLE_5_DESCRIPTION]
+## 10. Bookkeeping is part of the work.
 
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-## [SECTION_2_NAME]
-
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+A task is not complete until the checkbox in `specs/<NNN>/tasks.md` is ticked in the same commit as the implementation. Code Agent ticks. Opus verifies. PRs that update files but leave `tasks.md` untouched are rejected.

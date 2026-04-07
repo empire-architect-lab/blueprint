@@ -170,6 +170,6 @@ These rules are unchanged by this task. The bot identity satisfies them; nothing
 
 ## Related
 
-- Constitution Principle 3 — `memory/constitution.md`
+- Constitution Principle 3 — `.specify/memory/constitution.md`
 - Task dispatch — `.opus/inbox/007-code-agent-identity.md`
 - Existing branch protection log — `.logs/T012-branch-protection.log` (post PR #3 merge)
