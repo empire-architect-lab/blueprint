@@ -104,7 +104,7 @@ The whole sequence completes within **14 seconds** of page load on a 4G connecti
 - **FR-4** — The four build-time metadata numbers (commit sha, spec count, task count, `0 lies`) are computed by a single `scripts/collect-build-metadata.ts` script run in the `prebuild` npm script. Output lands in `src/content/build-metadata.ts`, committed via build and imported by the hero component.
 - **FR-5** — The skip link is rendered from `T+0.4s` onward (when the cursor first appears) until the hero section has rendered. It is hidden before and after.
 - **FR-6** — The replay button is rendered only inside the hero section, and clicking it re-runs the full cinematic from T+0 using the same GSAP timeline object (no component remount).
-- **FR-7** — All text content that appears to the visitor (the typed command, the skip label, the replay label, the hero headline, the "Cinematic intro disabled..." subtitle) MUST be sourced from `messages/en.json` via `next-intl` — even though only English is wired right now. No inline English strings in components. This keeps M1 i18n-ready for later locales (fr, ar, nl per constitution).
+- **FR-7** — All visitor-facing text (typed command, skip label, replay label, hero headline, reduced-motion subtitle) MUST be sourced from `messages/{en,fr,ar,nl}.json` via `next-intl`. English is the canonical, human-written source. fr/ar/nl land as stub translations (literal English copy is an acceptable stub) and every stubbed key is recorded in `messages/_review.md` for later human review. RTL layout for `ar` is wired and renders correctly even when the strings are stubs. No inline English strings in components. **Exception:** the 8 pipeline node labels (`SPECIFY/PLAN/TASKS/IMPLEMENT/PR/CI/PREVIEW/DEPLOY`) are proper nouns / command names, sourced verbatim from `src/lib/constants/pipeline-nodes.ts`, and explicitly exempt from `next-intl`.
 - **FR-8** — The sound effect on "enter" is OFF by default. It plays only when `NEXT_PUBLIC_BLUEPRINT_SFX === "true"` in the client bundle. The SFX asset (`public/sfx/enter-click.mp3`, ~3KB) is code-split and only fetched if the flag is on.
 - **FR-9** — Route Handler for `/api/head-commit` returns JSON `{ sha: string; shortSha: string; message: string; source: "github" | "fallback" }`.
 - **FR-10** — The mobile 2D SVG animation is implemented as a separate component (`HeroMobile`) dynamically imported only when `matchMedia("(max-width: 767px)").matches` on first paint. Three.js is `dynamic(() => import(...), { ssr: false })` and guarded behind the same desktop media query — mobile never touches it.
@@ -130,7 +130,7 @@ The whole sequence completes within **14 seconds** of page load on a 4G connecti
 - **OOS-2** — The `spec_id` hover-tooltip system. That is Spec 005. M1 may add `data-spec-id="001-the-cursor"` attributes to its components for future wiring, but no tooltip logic ships here.
 - **OOS-3** — Supabase-backed content of any kind. The commit data is from GitHub API; the metadata is build-time. Supabase is not touched by this spec.
 - **OOS-4** — Authentication, user accounts, tenant context. This page is fully public and stateless.
-- **OOS-5** — French, Arabic, Dutch locales. English only. The i18n plumbing is wired but the dictionary has only `en`.
+- **OOS-5** — Human-reviewed copy in fr, ar, nl. Stub translations are committed to `messages/{fr,ar,nl}.json` for every new key, marked in a sibling `messages/_review.md` tracker file. The English copy is the canonical source for M1. RTL layout for `ar` is wired and rendered correctly even if the words are stubs.
 - **OOS-6** — Custom domain, SEO meta tags beyond defaults, Open Graph images, sitemap, robots.txt. Those are a later housekeeping spec.
 - **OOS-7** — Any back/forward navigation animation. On browser back/forward, the cinematic re-runs from T+0 — same as a fresh load.
 
@@ -212,17 +212,14 @@ Then the commit-hash reveal still happens with the hardcoded fallback sha
 - **Principle 8 (observability)** — Sentry + Plausible wired per NFR-7.
 - **Principle 9 (no secrets)** — No tokens needed; public repo read with 60s edge cache.
 - **Principle 10 (bookkeeping)** — Every task in `tasks.md` for this spec gets ticked in the same commit that implements it.
-- **Principle 11 (inbox/outbox)** — All dispatches to implement this spec come through `.opus/inbox/`; Code Agent status goes to `.opus/outbox/`.
 
 ---
 
-## Open questions for Opus review
+## Open questions — ANSWERED by Opus (task 006)
 
-1. **Cabinet Grotesk licensing** — Fontshare serves Cabinet Grotesk free for personal+commercial use via CDN. OK to load from their CDN via `next/font` (or should we self-host the woff2 files in `public/fonts/` and vendor them)? Recommendation: self-host for zero third-party runtime dependency.
-2. **Earth texture vs pure wireframe** — The ROADMAP says "wireframe Mercator projection". Confirm pure wireframe (line segments, no fill) vs a low-poly shaded globe. Recommendation: pure wireframe per ROADMAP literal reading; it's cheaper and on-brand.
-3. **Pipeline node labels — localized or verbatim?** — `SPECIFY → PLAN → TASKS → IMPLEMENT → PR → CI → PREVIEW → DEPLOY`. These are the actual spec-kit command names plus CI/CD terms. Recommendation: verbatim, NOT localized, because they're proper nouns / command names. Exception: if a future Arabic locale needs RTL layout, we'll rotate the ordering, not translate the words.
-4. **Replay button visibility** — Should the replay button be visible always or only on hover over the hero corner? Recommendation: always visible but de-emphasized (small, 60% opacity, brightens on hover/focus).
-5. **SFX enter-click default** — Confirm OFF by default as drafted. Recommendation: confirm.
-6. **Commit message truncation** — Commit messages can exceed ~80 chars. Truncate at 72 chars with ellipsis? Or let it wrap onto a second terminal line? Recommendation: truncate at 72 with ellipsis for visual rhythm.
-
-Opus: please redline or confirm each. If you approve as-is, Code Agent proceeds to hand-authored `tasks.md` implementation, which will still require a **fresh** inbox dispatch (task 005?) before any implementation code is written, per the workflow rule.
+1. **Cabinet Grotesk licensing** — **ANSWERED: self-host.** Vendor the woff2 files in `public/fonts/` via `next/font/local`. Zero third-party runtime dependency. Reflected in `plan.md` stack table.
+2. **Earth texture vs pure wireframe** — **ANSWERED: pure wireframe.** Line segments, no fill. Per ROADMAP literal reading; cheaper and on-brand.
+3. **Pipeline node labels** — **ANSWERED: verbatim, NOT localized.** Sourced from `src/lib/constants/pipeline-nodes.ts` as `export const PIPELINE_NODES = ['SPECIFY','PLAN','TASKS','IMPLEMENT','PR','CI','PREVIEW','DEPLOY'] as const;`. Exempt from `next-intl` because they are proper nouns / command names. No inline strings in `pipeline-scene.tsx`.
+4. **Replay button visibility** — **ANSWERED: always visible at 60% opacity**, brightens to 100% on hover/focus.
+5. **SFX enter-click default** — **ANSWERED: OFF by default**, opt-in via `NEXT_PUBLIC_BLUEPRINT_SFX=true`. Confirmed as drafted.
+6. **Commit message truncation** — **ANSWERED: truncate at 72 chars with ellipsis** for visual rhythm. Helper handles Unicode safely (use `[...str]` spread, not `.length`).

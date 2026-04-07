@@ -45,11 +45,14 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 - [ ] Manually hit `http://localhost:3000/api/head-commit` in dev: 200 with live data; disconnect network and hit again: 200 with fallback
 - [ ] Unit test green
 
-## T004 — i18n strings and next-intl wiring for M1
+## T004 — i18n strings and next-intl wiring for M1 (en/fr/ar/nl)
 
-- [ ] Verify `next-intl` middleware is already configured from foundation T007; if not, wire it minimally for `en` only
-- [ ] Add to `messages/en.json` under new `cursor` and `hero` namespaces: all visitor-facing strings from `spec.md` (typed command, skip label, replay label, reduced-motion subtitle, hero headline, metadata format string)
-- [ ] Run `scripts/check-i18n.sh` — must pass (no hardcoded English in any new component)
+- [ ] Verify `next-intl` middleware is already configured from foundation T007 for all four locales (`en`, `fr`, `ar`, `nl`); wire any missing locale minimally
+- [ ] Add new `cursor.*` and `hero.*` namespaces to `messages/en.json` with all visitor-facing strings from `spec.md` (typed command, skip label, replay label, reduced-motion subtitle, hero headline, metadata format string). English is human-written and canonical.
+- [ ] Add the same keys to `messages/fr.json`, `messages/ar.json`, `messages/nl.json` as stub translations. Literal English copy is an acceptable stub. Every key must exist in every locale file or `scripts/check-i18n.sh` will fail.
+- [ ] Create or append to `messages/_review.md` listing every stubbed key per locale (format: `## fr` / `- cursor.skipLabel` etc.) so a human reviewer can find them later
+- [ ] RTL spot check: confirm `ar` renders right-to-left in dev (`<html dir="rtl">` when locale is `ar`) even with stub strings
+- [ ] Run `scripts/check-i18n.sh` — must pass (no hardcoded English in any new component, all keys present in all four locales)
 
 ## T005 — SSR-safe hooks
 
@@ -102,9 +105,9 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T011 — Pipeline scene + scroll flythrough
 
-- [ ] `src/components/cursor/pipeline-scene.tsx` — a column of 8 `<PipelineNode />` positioned at increasing Y
-- [ ] `src/components/cursor/pipeline-node.tsx` — glowing torus + billboarded text label (from drei `<Text />`)
-- [ ] Node labels hardcoded (NOT localized per spec open question 3): `SPECIFY`, `PLAN`, `TASKS`, `IMPLEMENT`, `PR`, `CI`, `PREVIEW`, `DEPLOY`
+- [ ] Create `src/lib/constants/pipeline-nodes.ts` with `export const PIPELINE_NODES = ['SPECIFY','PLAN','TASKS','IMPLEMENT','PR','CI','PREVIEW','DEPLOY'] as const;` (verbatim, exempt from i18n per spec answer 3)
+- [ ] `src/components/cursor/pipeline-scene.tsx` — a column of 8 `<PipelineNode />` positioned at increasing Y; imports labels from `@/lib/constants/pipeline-nodes` and maps over `PIPELINE_NODES`. No inline node-label strings in this component.
+- [ ] `src/components/cursor/pipeline-node.tsx` — glowing torus + billboarded text label (from drei `<Text />`); receives label as a prop, never hardcodes one
 - [ ] 8th node replaces torus with a Vercel logo (imported SVG, extruded via `SVGLoader` + `ExtrudeGeometry`)
 - [ ] `src/lib/animations/cursor-scroll-timeline.ts` — ScrollTrigger timeline that scrubs camera Y position and lights each node at the right progress percentage
 - [ ] Lenis integration: `lenis.on('scroll', ScrollTrigger.update)` + `ScrollTrigger.scrollerProxy` setup

@@ -109,6 +109,8 @@ src/
 │   │   ├── cursor-timeline.ts             [NEW] — master GSAP timeline factory
 │   │   ├── cursor-scroll-timeline.ts      [NEW] — ScrollTrigger timeline factory
 │   │   └── cursor-state.ts                [NEW] — reducer state machine
+│   ├── constants/
+│   │   └── pipeline-nodes.ts              [NEW] — verbatim PIPELINE_NODES tuple, exempt from i18n
 │   ├── data/
 │   │   └── head-commit.ts                 [NEW] — client-side fetcher wrapping /api/head-commit with fallback
 │   └── hooks/
