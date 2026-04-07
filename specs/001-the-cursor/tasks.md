@@ -80,11 +80,11 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T008 — Skip link + replay button
 
-- [ ] `src/components/cursor/skip-link.tsx` — fixed bottom-right anchor, aria-label from i18n, activates on Enter and click, dispatches a custom `blueprint:cinematic-skip` event
-- [ ] `src/components/cursor/replay-button.tsx` — same positioning inside the hero, dispatches `blueprint:cinematic-replay` event
-- [ ] Both pass axe-core in isolation (Storybook not required; a `tests/unit/*-a11y.test.ts` vitest + jsdom + axe check is sufficient)
-- [ ] Both have visible focus rings (Tailwind `focus-visible:ring-2`)
-- [ ] Unit + a11y tests green
+- [x] `src/components/cursor/skip-link.tsx` — fixed bottom-right anchor, aria-label from i18n, activates on Enter and click, dispatches a custom `blueprint:cinematic-skip` event
+- [x] `src/components/cursor/replay-button.tsx` — same positioning inside the hero, dispatches `blueprint:cinematic-replay` event
+- [x] Both pass axe-core in isolation (Storybook not required; a `tests/unit/*-a11y.test.ts` vitest + jsdom + axe check is sufficient)
+- [x] Both have visible focus rings (Tailwind `focus-visible:ring-2`)
+- [x] Unit + a11y tests green
 
 ## T009 — Earth scene (Three.js)
 
