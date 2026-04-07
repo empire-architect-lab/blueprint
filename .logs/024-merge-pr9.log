@@ -1,0 +1,52 @@
+=== typecheck ===
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+=== lint ===
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+=== test ===
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:48:09
+   Duration  603ms (transform 16ms, setup 0ms, import 25ms, tests 4ms, environment 482ms)
+
+=== test:e2e ===
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+[2m[WebServer] [22m[33m[1m⚠[22m[39m The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (349ms)
+
+  1 passed (9.9s)
+=== check-rls ===
+check-rls: OK
+=== check-tenant-id ===
+check-tenant-id: OK
+=== check-forbidden-terms ===
+check-forbidden-terms: OK
+=== check-i18n ===
+check-i18n: OK
+=== gitleaks ===
+[90m11:48PM[0m [32mINF[0m 34 commits scanned.
+[90m11:48PM[0m [32mINF[0m scan completed in 152ms
+[90m11:48PM[0m [32mINF[0m no leaks found
+=== npm audit ===
+found 0 vulnerabilities
