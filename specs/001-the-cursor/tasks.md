@@ -37,13 +37,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T003 — Edge route handler for HEAD commit
 
-- [ ] Create `src/app/api/head-commit/route.ts` with `runtime = "edge"`, `revalidate = 60`, GET handler per plan FR-1/FR-9
-- [ ] On fetch success: return `{ sha, shortSha, message: truncate(message, 72), source: "github" }`
-- [ ] On any non-2xx or thrown error: read `FALLBACK_COMMIT` from `src/content/fallback-commit.ts`, return with `source: "fallback"`
-- [ ] `truncate` helper handles Unicode safely (use `[...str]` spread, not `.length`)
-- [ ] Write unit test `tests/unit/head-commit-fallback.test.ts`: mock fetch to throw, assert fallback shape is returned
-- [ ] Manually hit `http://localhost:3000/api/head-commit` in dev: 200 with live data; disconnect network and hit again: 200 with fallback
-- [ ] Unit test green
+- [x] Create `src/app/api/head-commit/route.ts` with `runtime = "edge"`, `revalidate = 60`, GET handler per plan FR-1/FR-9
+- [x] On fetch success: return `{ sha, shortSha, message: truncate(message, 72), source: "github" }`
+- [x] On any non-2xx or thrown error: read `FALLBACK_COMMIT` from `src/content/fallback-commit.ts`, return with `source: "fallback"`
+- [x] `truncate` helper handles Unicode safely (use `[...str]` spread, not `.length`)
+- [x] Write unit test `tests/unit/head-commit-fallback.test.ts`: mock fetch to throw, assert fallback shape is returned
+- [x] Manually hit `http://localhost:3000/api/head-commit` in dev: 200 with live data; disconnect network and hit again: 200 with fallback
+- [x] Unit test green
 
 ## T004 — i18n strings and next-intl wiring for M1 (en/fr/ar/nl)
 
