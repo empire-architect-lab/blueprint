@@ -177,3 +177,13 @@ We need almost no traditional assets because the cinematic stack generates beaut
 ## Pace
 
 There is no deadline. Each chapter ships when its spec is green and Chainbeard says _"wow."_ If a chapter doesn't make him say wow, it gets re-spec'd, not shipped. **The Blueprint is allowed to take as long as it takes.** The point is the proof, not the speed.
+
+---
+
+## Tech debt / future
+
+Items surfaced during the build that don't block the current milestone. Address when convenient or when forced.
+
+- **Run `/speckit-constitution` to populate version metadata in `.specify/memory/constitution.md`.** Task 013 did a flat content copy from the old `memory/constitution.md`. Spec-kit's official slash command would add `[CONSTITUTION_VERSION]`, ratification date, and amendment tracking. Non-blocking — the principles themselves are correct and enforced. Surfaced by task 012/013 reply.
+- **Migrate `actions/checkout@v4` and `actions/setup-node@v4` before June 2026.** GitHub Actions will force Node 24 in those actions; pinning to v5 (or current) before the cutoff avoids surprise CI breakage. Surfaced by task 014 audit section 3.
+- **Rename `middleware` → `proxy` per Next.js 16 deprecation.** A deprecation warning shows up in Playwright webserver output. Non-blocking until the next Next.js minor that removes the legacy name. Surfaced by task 014 audit surprise #6.
