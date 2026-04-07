@@ -28,12 +28,12 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T002 — Build-time metadata pipeline
 
-- [ ] Create `scripts/collect-build-metadata.ts` per plan: reads git + specs + tasks, writes `src/content/build-metadata.ts` and `src/content/fallback-commit.ts`
-- [ ] Add `"prebuild": "tsx scripts/collect-build-metadata.ts"` to `package.json`
-- [ ] Add `src/content/` to `.gitignore`
-- [ ] Run `npm run build` locally; verify both generated files exist, shape is `{ sha, shortSha, specCount, taskCount, lieCount: 0 }` and `{ sha, shortSha, message }`
-- [ ] Write unit test for the collector script: mock filesystem, assert counts are correct
-- [ ] Unit test green
+- [x] Create `scripts/collect-build-metadata.ts` per plan: reads git + specs + tasks, writes `src/content/build-metadata.ts` and `src/content/fallback-commit.ts`
+- [x] Add `"prebuild": "tsx scripts/collect-build-metadata.ts"` to `package.json`
+- [x] Add `src/content/` to `.gitignore`
+- [x] Run `npm run build` locally; verify both generated files exist, shape is `{ sha, shortSha, specCount, taskCount, lieCount: 0 }` and `{ sha, shortSha, message }`
+- [x] Write unit test for the collector script: mock filesystem, assert counts are correct
+- [x] Unit test green
 
 ## T003 — Edge route handler for HEAD commit
 
