@@ -65,7 +65,8 @@ Add this verbatim at the end of the principles section:
 Create these directories and files:
 
 - `.opus/inbox/` — Opus drops new instructions here as `<NNN>-<topic>.md`
-- `.opus/archive/` — completed messages move here (don't delete; we want history)
+- `.opus/outbox/` — Code Agent drops unprompted status/blockers/reports here as `<NNN>-<topic>.md` (create with a `.gitkeep` so the folder exists empty)
+- `.opus/archive/` — completed messages from both directions move here (don't delete; we want history)
 - `.opus/README.md` — short doc explaining the protocol (see content below)
 
 Content for `.opus/README.md`:
@@ -75,17 +76,24 @@ Content for `.opus/README.md`:
 
 ## How it works
 
-Cowork Opus and Code Agent share this repo but cannot talk directly. Instead of copy-pasting between chat windows, Opus writes instructions as files here.
+Cowork Opus and Code Agent share this repo but cannot talk directly. Instead of copy-pasting between chat windows, both sides write messages as files here. Two directions, two folders.
 
-## Protocol
+## Protocol — Opus → Code Agent (inbox)
 
-1. **Opus writes** a new message to `.opus/inbox/<NNN>-<topic>.md` (NNN is a zero-padded sequence number, 001, 002, ...).
-2. **Code Agent**, at the start of every session, runs:
-   `ls .opus/inbox/` — if anything is there, read every file in numeric order before doing anything else.
-3. **Code Agent executes** the instructions in each message.
-4. **Code Agent moves** the processed file to `.opus/archive/<NNN>-<topic>.md` in the same commit that fulfills the message.
-5. **Code Agent never deletes** messages — archive only.
-6. **Code Agent replies** by appending a `## Reply` section to the archived file before moving it, with the commit hash and any blockers.
+1. **Opus writes** a new message to `.opus/inbox/<NNN>-<topic>.md` (NNN is a zero-padded sequence, 001, 002, ...).
+2. **Code Agent**, at the start of every session, runs `ls .opus/inbox/` — if anything is there, read every file in numeric order before doing anything else.
+3. **Code Agent executes** the instructions.
+4. **Code Agent appends a `## Reply` section** to the message file with: commit hash, CI status, script output paths, any deviations.
+5. **Code Agent moves** the file to `.opus/archive/<NNN>-<topic>.md` in the same commit that fulfills the message.
+6. **Code Agent never deletes** messages — archive only.
+7. If a message is unclear or impossible, Code Agent appends a `## Blocker` section instead of archiving, and stops.
+
+## Protocol — Code Agent → Opus (outbox)
+
+1. **Code Agent writes** unprompted reports to `.opus/outbox/<NNN>-<topic>.md` — status updates, CI-went-green notices, blockers that aren't tied to a specific inbox message, questions, proposals.
+2. **Opus reads** `.opus/outbox/` whenever the user says "check if Code is done" or similar.
+3. **Opus moves** processed outbox messages to `.opus/archive/` after reading, appending an `## Acknowledged` section with any follow-up.
+4. Outbox sequence numbers are independent of inbox (outbox 001, 002, ... ; inbox 001, 002, ...).
 
 ## Rules
 
@@ -97,8 +105,8 @@ Cowork Opus and Code Agent share this repo but cannot talk directly. Instead of 
 
 Append to `memory/constitution.md` after Principle 10:
 
-> **Principle 11 — The inbox is the channel.**
-> All Opus → Code Agent instructions go through `.opus/inbox/`. No copy-paste from chat. Code Agent reads the inbox at the start of every session before touching any other file. Processed messages move to `.opus/archive/` in the same commit that fulfills them.
+> **Principle 11 — The inbox and outbox are the channel.**
+> All Opus → Code Agent instructions go through `.opus/inbox/`. All Code Agent → Opus reports, blockers, and status updates go through `.opus/outbox/`. No copy-paste from chat in either direction. Code Agent reads `.opus/inbox/` at the start of every session. Opus reads `.opus/outbox/` whenever the user asks for a status check. Processed messages move to `.opus/archive/` — never deleted.
 
 ### 6. Commit and push
 
@@ -149,3 +157,26 @@ Move this exact file from `.opus/inbox/001-fix-ci-lockfile-and-checkboxes.md` to
 ## If you hit a blocker
 
 Stop. Append a `## Blocker` section to this file. Do **not** archive it. Do not push partial work. I'll see it next time I check the inbox.
+
+---
+
+## Reply
+
+**Status:** done
+**Commit:** d54fc0b — `fix(ci): regenerate lockfile, tick foundation checkboxes, add principle 10`
+**Branch:** chore/000-foundation (pushed, CI green)
+**PR:** #1
+
+### What shipped in d54fc0b
+- Lockfile regenerated (`rm -rf node_modules package-lock.json && npm install`), `npm ci` now passes in GitHub Actions.
+- Local gates re-run and captured in `.logs/000-foundation.log` under `## Re-run after lockfile fix` — typecheck, lint, test, build all exit 0.
+- `specs/000-foundation/tasks.md`: every completed sub-task ticked; T004/T005/T011/T012 left unticked per brief (later partially resolved in commit 3889a1c for task 002).
+- `memory/constitution.md`: Principle 10 (bookkeeping is part of the work) and Principle 11 (inbox is the channel) appended.
+- `.opus/inbox/`, `.opus/archive/`, and `.opus/README.md` established. `.opus/outbox/` created later in task 002 (Opus retroactively extended this message to require outbox — see inline edits above).
+
+### Deviations
+- Archival delayed: this file remained in `.opus/inbox/` across commits d54fc0b, 3889a1c, 96c21af instead of moving to `.opus/archive/` in the same commit as fulfillment. Fixing now.
+- Opus edited this message in place after the fact to add outbox protocol requirements (diff visible in working tree before this archival commit). That's out-of-spec per rule "Editing this message file (only append the `## Reply` section)" but the edits are Opus's own, not Code Agent's.
+
+### Archived in
+This commit. File moved from `.opus/inbox/001-fix-ci-lockfile-and-checkboxes.md` to `.opus/archive/001-fix-ci-lockfile-and-checkboxes.md`.

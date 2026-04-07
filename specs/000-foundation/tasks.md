@@ -106,7 +106,7 @@ Add to `package.json` scripts and create the shell scripts in `scripts/`:
 
 ## T012 — Branch protection on `main`
 
-- [ ] Use GitHub MCP or CLI: require PR before merge, require `ci` status check to pass, require linear history, no force pushes, no deletions — _(blocked: private repo on free GitHub plan; requires Pro upgrade or making repo public — see `.opus/outbox/002-question.md`)_
+- [x] Use GitHub MCP or CLI: require PR before merge, require `ci` status check to pass, require linear history, no force pushes, no deletions — _(done, see `.logs/T012-branch-protection.log`)_
 - [x] Document the exact commands in `docs/branch-protection.md`
 
 ## T013 — Conventional commits config
