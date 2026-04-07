@@ -88,13 +88,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T009 — Earth scene (Three.js)
 
-- [ ] `src/components/cursor/earth-scene.tsx` — client component, wraps `<Canvas>` from `@react-three/fiber`, sets up camera + lighting + ambient
-- [ ] `src/components/cursor/earth.tsx` — wireframe sphere geometry (IcosahedronGeometry 32 subdivisions, MeshBasicMaterial wireframe), radius 2
-- [ ] Casablanca dot at (33.5731, -7.5898) rendered as a glowing Sphere with Emissive material
-- [ ] Helper `latLngToXYZ(lat, lng, radius)` in `src/lib/three/geo.ts` with unit test
-- [ ] Dynamic import with `ssr: false` from the parent component
-- [ ] Canvas has `aria-hidden="true"`, wrapper div has `data-role="earth"`
-- [ ] Unit test for `latLngToXYZ` green
+- [x] `src/components/cursor/earth-scene.tsx` — client component, wraps `<Canvas>` from `@react-three/fiber`, sets up camera + lighting + ambient
+- [x] `src/components/cursor/earth.tsx` — wireframe sphere geometry (IcosahedronGeometry 32 subdivisions, MeshBasicMaterial wireframe), radius 2
+- [x] Casablanca dot at (33.5731, -7.5898) rendered as a glowing Sphere with Emissive material
+- [x] Helper `latLngToXYZ(lat, lng, radius)` in `src/lib/three/geo.ts` with unit test
+- [x] Dynamic import with `ssr: false` from the parent component
+- [x] Canvas has `aria-hidden="true"`, wrapper div has `data-role="earth"`
+- [x] Unit test for `latLngToXYZ` green
 
 ## T010 — Particle dissolve system
 
