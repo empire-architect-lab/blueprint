@@ -80,29 +80,71 @@ Reply in the next inbox message that the App is installed. Code Agent will:
 - Submit an approving review on PR #3 as the bot, unblocking it
 - Do the same for PR #2 once task 006 is approved
 
-## Token generation (Code Agent's side, once secrets exist)
+## Token generation (Code Agent's side)
 
-Installation tokens last 1 hour. Code Agent regenerates one at the start of each task using a tiny script (added in a follow-up commit once the secrets exist):
+Installation tokens last 1 hour. Code Agent regenerates one at the start of each task with:
 
 ```bash
-# scripts/get-bot-token.sh — added in follow-up
-node scripts/generate-installation-token.mjs
-# prints a token to stdout; export to env or pipe into `gh auth login --with-token`
+BOT_TOKEN="$(npm run -s bot:token)"
 ```
 
-The script reads `BLUEPRINT_BOT_APP_ID`, `BLUEPRINT_BOT_INSTALLATION_ID`, and `BLUEPRINT_BOT_PRIVATE_KEY` from local env vars (Chainbeard's machine) or from repo secrets when running in CI. Local dev sets them in `.env.local` (gitignored).
+which runs `scripts/generate-installation-token.mjs`. The script:
+
+1. Loads `.env.bot.local` (gitignored) at the repo root if present.
+2. Reads `BLUEPRINT_BOT_APP_ID`, `BLUEPRINT_BOT_INSTALLATION_ID`, `BLUEPRINT_BOT_PRIVATE_KEY` from env.
+3. Mints an RS256 JWT inline via `node:crypto` (zero external dependencies).
+4. Exchanges the JWT for a `ghs_*` installation token via `POST /app/installations/:id/access_tokens`.
+5. Prints only the token to stdout.
+
+### `.env.bot.local` format
+
+Create this file **at the repo root** (`blueprint/.env.bot.local`). It is matched by `.env*` in `.gitignore`, so it will never be committed. Populate it from the three values Chainbeard saved as repo secrets during the initial setup:
+
+```dotenv
+BLUEPRINT_BOT_APP_ID=1234567
+BLUEPRINT_BOT_INSTALLATION_ID=122187674
+BLUEPRINT_BOT_PRIVATE_KEY="<paste full PEM here — BEGIN/END lines and all multi-line body, wrapped in double quotes, newlines preserved>"
+BLUEPRINT_BOT_USER_ID=123456789
+```
+
+The private key value **must** be wrapped in double quotes and preserve the `.pem` file's newlines literally between the quotes. The loader in `generate-installation-token.mjs` handles multi-line quoted values.
+
+`BLUEPRINT_BOT_USER_ID` is the numeric ID of the bot account, looked up once via `curl -sS https://api.github.com/users/blueprint-code-agent%5Bbot%5D | jq .id` and reused in the git email (see below).
+
+### Quick smoke test
+
+```bash
+BOT_TOKEN="$(npm run -s bot:token)"
+curl -sS -H "Authorization: token $BOT_TOKEN" \
+  https://api.github.com/repos/empire-architect-lab/blueprint \
+  | jq -r '.full_name'
+# expected: empire-architect-lab/blueprint
+```
 
 ## Git config (Code Agent's machine)
 
-After token generation:
+After token generation, configure local git to author commits as the bot:
 
 ```bash
+# One-time per clone:
 git config user.name  "blueprint-code-agent[bot]"
-git config user.email "<APP_ID>+blueprint-code-agent[bot]@users.noreply.github.com"
-gh auth login --with-token <<< "$BOT_TOKEN"
+git config user.email "${BLUEPRINT_BOT_USER_ID}+blueprint-code-agent[bot]@users.noreply.github.com"
+
+# Each task:
+BOT_TOKEN="$(npm run -s bot:token)"
+git push "https://x-access-token:${BOT_TOKEN}@github.com/empire-architect-lab/blueprint.git" HEAD
 ```
 
-The numeric `<APP_ID>` prefix on the email is the GitHub-standard format for App bot noreply addresses.
+The numeric user-ID prefix on the noreply email is the GitHub-standard format for App bot addresses; the GitHub UI uses it to attribute the commit to the bot's profile picture and link.
+
+### Alternative: `gh` CLI as the bot
+
+```bash
+gh auth login --with-token <<< "$BOT_TOKEN"
+gh api user   # should print "blueprint-code-agent[bot]"
+```
+
+From then on, `gh pr create`, `gh pr review --approve`, and `gh api` all act as the bot until the token expires (1h) or you run `gh auth logout`.
 
 ## Token rotation
 
