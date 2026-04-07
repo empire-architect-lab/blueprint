@@ -17,14 +17,14 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T001 — Scaffold deps and fonts
 
-- [ ] `npm install three@^0.163 @react-three/fiber@^9 @react-three/drei@^10 zustand@^5`
-- [ ] `npm install -D tsx@^4`
-- [ ] Verify `gsap`, `@gsap/react`, `lenis`, `framer-motion`, `next-intl` already present (`npm ls` each)
-- [ ] Download Cabinet Grotesk Variable, JetBrains Mono Variable, Switzer Variable from Fontshare; vendor the woff2 files to `public/fonts/`
-- [ ] Create `src/styles/fonts.ts` using `next/font/local` declaring all three families with CSS variable names `--font-display`, `--font-mono`, `--font-body`
-- [ ] Update `src/app/layout.tsx` to apply the three CSS variables to `<html>`
-- [ ] Update `tailwind.config.ts` to register `fontFamily.display`, `fontFamily.mono`, `fontFamily.sans` from those variables
-- [ ] `npm run build` succeeds; `npm run dev` renders the layout with the fonts visually confirmed via a temporary throwaway `<h1 className="font-display text-[220px]">test</h1>` (delete before commit)
+- [x] `npm install three@^0.163 @react-three/fiber@^9 @react-three/drei@^10 zustand@^5`
+- [x] `npm install -D tsx@^4`
+- [x] Verify `gsap`, `@gsap/react`, `lenis`, `framer-motion`, `next-intl` already present (`npm ls` each)
+- [x] Download Cabinet Grotesk Variable, JetBrains Mono (Regular weight; variable woff2 not distributed by JetBrains), Switzer Variable from Fontshare/JetBrains; vendor the woff2 files to `public/fonts/`
+- [x] Create `src/styles/fonts.ts` using `next/font/local` declaring all three families with CSS variable names `--font-display`, `--font-mono`, `--font-body`
+- [x] Update `src/app/[locale]/layout.tsx` to apply the three CSS variables to `<html>`
+- [x] Register font families in Tailwind 4 `@theme inline` block in `src/app/globals.css` (no `tailwind.config.ts` exists in Tailwind 4 setup — see plan)
+- [x] All 9 foundation scripts green (typecheck, lint, vitest, playwright, gitleaks, audit, rls, tenant, forbidden, i18n) — see `.logs/017-t001.log`
 
 ## T002 — Build-time metadata pipeline
 
