@@ -17,6 +17,7 @@
     "scan:tenant": "bash scripts/check-tenant-id.sh",
     "scan:forbidden": "bash scripts/check-forbidden-terms.sh",
     "scan:i18n": "bash scripts/check-i18n.sh",
+    "bot:token": "node scripts/generate-installation-token.mjs",
     "prepare": "husky"
   },
   "lint-staged": {

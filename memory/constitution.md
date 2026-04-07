@@ -14,6 +14,8 @@ Blueprint is multi-tenant from the first migration. Every Postgres table include
 
 Branch protection on `main` requires the `ci` status check to pass. The 9 non-negotiable scripts run on every PR. A red check blocks merge — no overrides, no "just this once". If a script is wrong, fix the script in its own PR, do not bypass it.
 
+PRs are authored by Code Agent (`blueprint-code-agent[bot]` or equivalent machine identity) and approved by Chainbeard. Self-approval is impossible by GitHub rule and forbidden by this constitution.
+
 ## 4. Conventional commits. `feat|fix|chore|refactor|docs|test(scope): subject`.
 
 Every commit message is parsed by commitlint via the Husky `commit-msg` hook. Subjects are imperative, lowercase, under 72 characters. Scope identifies the feature or area. This is enforced locally and in CI — non-conforming commits cannot be pushed.
