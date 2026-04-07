@@ -63,11 +63,11 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T006 — State machine
 
-- [ ] `src/lib/animations/cursor-state.ts` — reducer with states from `plan.md` state-machine diagram
-- [ ] Actions: `TICK_TYPING`, `START_PAUSE_1`, `PRESS_ENTER`, `REVEAL_COMMIT`, `START_DISSOLVE`, `EARTH_READY`, `PIPELINE_PROGRESS(n)`, `TRIGGER_FLASH`, `REVEAL_HERO`, `SKIP`, `REPLAY`
-- [ ] Reducer enforces legal transitions; illegal transitions throw in dev, no-op in prod
-- [ ] Unit tests `tests/unit/cursor-state.test.ts` cover: every legal transition, every illegal transition, SKIP from every state, REPLAY only from HERO_REVEALED
-- [ ] Unit tests green
+- [x] `src/lib/animations/cursor-state.ts` — reducer with states from `plan.md` state-machine diagram
+- [x] Actions: `TICK_TYPING`, `START_PAUSE_1`, `PRESS_ENTER`, `REVEAL_COMMIT`, `START_DISSOLVE`, `EARTH_READY`, `PIPELINE_PROGRESS(n)`, `TRIGGER_FLASH`, `REVEAL_HERO`, `SKIP`, `REPLAY`
+- [x] Reducer enforces legal transitions; illegal transitions throw in dev, no-op in prod
+- [x] Unit tests `tests/unit/cursor-state.test.ts` cover: every legal transition, every illegal transition, SKIP from every state, REPLAY only from HERO_REVEALED
+- [x] Unit tests green
 
 ## T007 — Terminal typer component
 
