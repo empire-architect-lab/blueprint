@@ -1,0 +1,10 @@
+.next
+node_modules
+.logs
+playwright-report
+test-results
+coverage
+package-lock.json
+public
+messages
+.opus

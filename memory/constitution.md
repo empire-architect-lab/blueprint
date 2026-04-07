@@ -37,3 +37,7 @@ Sentry is wired into client, server, and edge runtimes from the first deploy. Ev
 ## 9. Secrets never live in the repo. gitleaks is the gate.
 
 `.env` files are gitignored. Only `.env.example` is committed, with placeholder values. The `scan:secrets` script runs gitleaks on every PR. Any committed secret is treated as a security incident, rotated immediately, and the commit history is rewritten. Real secrets live in Vercel env vars and the Supabase dashboard — nowhere else.
+
+## 10. Bookkeeping is part of the work.
+
+A task is not complete until the checkbox in `specs/<NNN>/tasks.md` is ticked in the same commit as the implementation. Code Agent ticks. Opus verifies. PRs that update files but leave `tasks.md` untouched are rejected.

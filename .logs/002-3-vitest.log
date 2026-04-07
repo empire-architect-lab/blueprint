@@ -1,0 +1,13 @@
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  18:22:01
+   Duration  551ms (transform 22ms, setup 0ms, import 33ms, tests 4ms, environment 423ms)
+
