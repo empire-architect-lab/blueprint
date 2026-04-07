@@ -1,0 +1,13 @@
+PR #10 merged.
+
+Steps:
+- gh pr update-branch 10 → "PR branch updated" (PR was BEHIND main after PR #11 merged)
+- CI re-ran on the merged-with-main branch: ci=SUCCESS, Vercel=SUCCESS, Vercel Preview Comments=SUCCESS
+- Bot review: blueprint-code-agent APPROVED
+- gh pr merge 10 --squash --delete-branch → success
+- main HEAD: 647fe82 feat(spec-001): T001 — scaffold deps and fonts (#10)
+
+Production deployment:
+- Vercel commit status on 647fe82: state=success
+- Deployment URL: https://vercel.com/nacirizak-7822s-projects/blueprint/BvqGA4JRtpR2XvoQQuLsC6wg1AEz
+- Note: GitHub's deployments API showed an empty list for sha=647fe82 — Vercel only registers via GitHub commit-status (not the GitHub Deployments API). The "ready" signal comes from the commit-status state=success.
