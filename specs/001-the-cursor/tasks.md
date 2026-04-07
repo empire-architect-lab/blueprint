@@ -56,10 +56,10 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T005 — SSR-safe hooks
 
-- [ ] `src/lib/hooks/use-reduced-motion.ts` — `useSyncExternalStore` + `matchMedia("(prefers-reduced-motion: reduce)")`, SSR returns `false`
-- [ ] `src/lib/hooks/use-is-mobile.ts` — same pattern with `matchMedia("(max-width: 767px)")`, SSR returns `false`
-- [ ] Unit tests for both hooks asserting SSR return value and client update behavior
-- [ ] Unit tests green
+- [x] `src/lib/hooks/use-reduced-motion.ts` — `useSyncExternalStore` + `matchMedia("(prefers-reduced-motion: reduce)")`, SSR returns `false`
+- [x] `src/lib/hooks/use-is-mobile.ts` — same pattern with `matchMedia("(max-width: 767px)")`, SSR returns `false`
+- [x] Unit tests for both hooks asserting SSR return value and client update behavior
+- [x] Unit tests green
 
 ## T006 — State machine
 
