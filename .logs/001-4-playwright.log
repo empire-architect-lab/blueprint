@@ -1,0 +1,17 @@
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+[2m[WebServer] [22m[33m[1m⚠[22m[39m The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[2m[WebServer] [22m[33m[1m⚠[22m[39m Using edge runtime on a page currently disables static generation for that page
+
+Running 6 tests using 6 workers
+
+  ok 3 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (696ms)
+  ok 1 [chromium] › e2e\cursor-api-down.spec.ts:11:5 › Scenario E — head-commit API down still reveals hero (774ms)
+  ok 4 [chromium] › e2e\cursor-reduced-motion.spec.ts:9:5 › Scenario B — reduced-motion reveals hero immediately (748ms)
+  ok 2 [chromium] › e2e\cursor-happy-path.spec.ts:15:5 › Scenario A — cinematic happy path reveals hero + replay (775ms)
+  ok 6 [chromium] › e2e\cursor-skip.spec.ts:5:5 › Scenario C — skip link keyboard shortcut reveals hero fast (1.8s)
+  ok 5 [chromium] › e2e\cursor-mobile.spec.ts:14:5 › Scenario D — mobile cinematic plays without three.js and reveals hero (7.4s)
+
+  6 passed (17.2s)

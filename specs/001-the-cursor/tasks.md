@@ -194,15 +194,15 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T021 — 9 foundation scripts green
 
-- [ ] `npm run typecheck` → `.logs/001-1-typecheck.log` exit 0
-- [ ] `npm run lint` → `.logs/001-2-lint.log` exit 0
-- [ ] `npm run test` → `.logs/001-3-vitest.log` exit 0
-- [ ] `npm run test:e2e` → `.logs/001-4-playwright.log` exit 0
-- [ ] `npm run scan:secrets` → `.logs/001-5-gitleaks.log` exit 0
-- [ ] `npm audit --audit-level=high` → `.logs/001-6-audit.log` exit 0
-- [ ] `bash scripts/check-rls.sh` → `.logs/001-7-rls.log` exit 0 (N/A — no Supabase in this spec, should still pass)
-- [ ] `bash scripts/check-tenant-id.sh` → `.logs/001-8-tenant.log` exit 0 (same)
-- [ ] `bash scripts/check-forbidden-terms.sh && bash scripts/check-i18n.sh` → `.logs/001-9-forbidden-i18n.log` exit 0
+- [x] `npm run typecheck` → `.logs/001-1-typecheck.log` exit 0
+- [x] `npm run lint` → `.logs/001-2-lint.log` exit 0
+- [x] `npm run test` → `.logs/001-3-vitest.log` exit 0
+- [x] `npm run test:e2e` → `.logs/001-4-playwright.log` exit 0
+- [x] `npm run scan:secrets` → `.logs/001-5-gitleaks.log` exit 0
+- [x] `npm audit --audit-level=high` → `.logs/001-6-audit.log` exit 0
+- [x] `bash scripts/check-rls.sh` → `.logs/001-7-rls.log` exit 0 (N/A — no Supabase in this spec, should still pass)
+- [x] `bash scripts/check-tenant-id.sh` → `.logs/001-8-tenant.log` exit 0 (same)
+- [x] `bash scripts/check-forbidden-terms.sh && bash scripts/check-i18n.sh` → `.logs/001-9-forbidden-i18n.log` exit 0
 
 ## T022 — PR, preview URL, Opus verification
 

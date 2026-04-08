@@ -1,0 +1,7 @@
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m5:13AM[0m [32mINF[0m 84 commits scanned.
+[90m5:13AM[0m [32mINF[0m scan completed in 243ms
+[90m5:13AM[0m [32mINF[0m no leaks found
