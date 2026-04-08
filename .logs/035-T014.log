@@ -1,0 +1,67 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  16 passed (16)
+      Tests  260 passed (260)
+   Start at  02:13:31
+   Duration  1.52s (transform 945ms, setup 0ms, import 2.65s, tests 724ms, environment 13.49s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (482ms)
+
+  1 passed (1.1s)
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m2:13AM[0m [32mINF[0m 57 commits scanned.
+[90m2:13AM[0m [32mINF[0m scan completed in 192ms
+[90m2:13AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK

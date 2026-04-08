@@ -1,0 +1,10 @@
+T021 sweep exit codes — all 0
+1 typecheck  .logs/001-1-typecheck.log  exit 0
+2 lint       .logs/001-2-lint.log       exit 0
+3 vitest     .logs/001-3-vitest.log     exit 0 (19 files / 268 tests)
+4 playwright .logs/001-4-playwright.log exit 0 (6 specs)
+5 gitleaks   .logs/001-5-gitleaks.log   exit 0 (84 commits, no leaks)
+6 npm audit  .logs/001-6-audit.log      exit 0 (0 vulns)
+7 rls        .logs/001-7-rls.log        exit 0
+8 tenant     .logs/001-8-tenant.log     exit 0
+9 forbidden+i18n .logs/001-9-forbidden-i18n.log exit 0

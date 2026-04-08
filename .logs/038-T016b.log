@@ -1,0 +1,128 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/page.test.tsx(13,48): error TS2786: 'HomePage' cannot be used as a JSX component.
+  Its type '() => void' is not a valid JSX element type.
+    Type '() => void' is not assignable to type '(props: any) => ReactNode | Promise<ReactNode>'.
+      Type 'void' is not assignable to type 'ReactNode | Promise<ReactNode>'.
+tests/unit/page.test.tsx(24,16): error TS2339: Property 'metadata' does not exist on type 'typeof import("c:/Users/AI Workspace/Projects/Blueprint Lab/blueprint/src/app/page")'.
+tests/unit/page.test.tsx(25,23): error TS2339: Property 'metadata' does not exist on type 'typeof import("c:/Users/AI Workspace/Projects/Blueprint Lab/blueprint/src/app/page")'.
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  18 passed (18)
+      Tests  266 passed (266)
+   Start at  02:41:33
+   Duration  1.61s (transform 933ms, setup 0ms, import 3.41s, tests 868ms, environment 16.38s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (5.3s)
+
+
+  1) [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible ───────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('heading', { level: 1 })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('heading', { level: 1 })[22m
+
+
+       5 |   await page.goto("/en");
+       6 |   await expect(page.locator("main")).toBeVisible();
+    >  7 |   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+         |                                                         ^
+       8 |
+       9 |   const accessibilityScanResults = await new AxeBuilder({ page })
+      10 |     .withTags(["wcag2a", "wcag2aa"])
+        at C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\e2e\home.spec.ts:7:57
+
+    Error Context: test-results\home-home-page-renders-and-is-accessible-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\home-home-page-renders-and-is-accessible-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\home-home-page-renders-and-is-accessible-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible ────────────────────────
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m2:41AM[0m [32mINF[0m 63 commits scanned.
+[90m2:41AM[0m [32mINF[0m scan completed in 224ms
+[90m2:41AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (593ms)
+
+  1 passed (1.3s)

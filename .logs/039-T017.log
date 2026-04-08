@@ -1,0 +1,249 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 c:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+ ❯ tests/unit/cursor-state.test.ts (0 test)
+ ❯ src/lib/utils.test.ts (0 test)
+ ❯ tests/unit/plausible.test.ts (0 test)
+ ❯ tests/unit/truncate.test.ts (0 test)
+ ❯ tests/unit/head-commit-fallback.test.ts (0 test)
+ ❯ tests/unit/locale-page.test.tsx (0 test)
+ ❯ tests/unit/pipeline-nodes.test.ts (0 test)
+ ❯ tests/unit/lat-lng-to-xyz.test.ts (0 test)
+ ❯ tests/unit/collect-build-metadata.test.ts (0 test)
+ ❯ tests/unit/use-reduced-motion.test.ts (0 test)
+ ❯ tests/unit/use-is-mobile.test.ts (0 test)
+ ❯ tests/unit/terminal-typer.test.tsx (0 test)
+ ❯ tests/unit/hero.test.tsx (0 test)
+ ❯ tests/unit/white-flash.test.tsx (0 test)
+ ❯ tests/unit/cinematic-intro-mobile.test.tsx (0 test)
+ ❯ tests/unit/replay-button.a11y.test.tsx (0 test)
+stderr | tests/unit/particles.test.ts
+WARNING: Multiple instances of Three.js being imported.
+
+ ❯ tests/unit/particles.test.ts (0 test)
+ ❯ tests/unit/skip-link.a11y.test.tsx (0 test)
+ ❯ tests/unit/cinematic-router.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 19 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/utils.test.ts [ src/lib/utils.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ src/lib/utils.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/19]⎯
+
+ FAIL  tests/unit/cinematic-intro-mobile.test.tsx [ tests/unit/cinematic-intro-mobile.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/cinematic-intro-mobile.test.tsx:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/19]⎯
+
+ FAIL  tests/unit/cinematic-router.test.tsx [ tests/unit/cinematic-router.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/cinematic-router.test.tsx:31:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/19]⎯
+
+ FAIL  tests/unit/collect-build-metadata.test.ts [ tests/unit/collect-build-metadata.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/collect-build-metadata.test.ts:21:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/19]⎯
+
+ FAIL  tests/unit/cursor-state.test.ts [ tests/unit/cursor-state.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/cursor-state.test.ts:45:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/19]⎯
+
+ FAIL  tests/unit/head-commit-fallback.test.ts [ tests/unit/head-commit-fallback.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/head-commit-fallback.test.ts:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/19]⎯
+
+ FAIL  tests/unit/hero.test.tsx [ tests/unit/hero.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/hero.test.tsx:25:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/19]⎯
+
+ FAIL  tests/unit/lat-lng-to-xyz.test.ts [ tests/unit/lat-lng-to-xyz.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/lat-lng-to-xyz.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/19]⎯
+
+ FAIL  tests/unit/locale-page.test.tsx [ tests/unit/locale-page.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/locale-page.test.tsx:8:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/19]⎯
+
+ FAIL  tests/unit/particles.test.ts [ tests/unit/particles.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/particles.test.ts:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/19]⎯
+
+ FAIL  tests/unit/pipeline-nodes.test.ts [ tests/unit/pipeline-nodes.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/pipeline-nodes.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/19]⎯
+
+ FAIL  tests/unit/plausible.test.ts [ tests/unit/plausible.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/plausible.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/19]⎯
+
+ FAIL  tests/unit/replay-button.a11y.test.tsx [ tests/unit/replay-button.a11y.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/replay-button.a11y.test.tsx:22:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/19]⎯
+
+ FAIL  tests/unit/skip-link.a11y.test.tsx [ tests/unit/skip-link.a11y.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/skip-link.a11y.test.tsx:22:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/19]⎯
+
+ FAIL  tests/unit/terminal-typer.test.tsx [ tests/unit/terminal-typer.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/terminal-typer.test.tsx:13:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/19]⎯
+
+ FAIL  tests/unit/truncate.test.ts [ tests/unit/truncate.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/truncate.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/19]⎯
+
+ FAIL  tests/unit/use-is-mobile.test.ts [ tests/unit/use-is-mobile.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/use-is-mobile.test.ts:30:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/19]⎯
+
+ FAIL  tests/unit/use-reduced-motion.test.ts [ tests/unit/use-reduced-motion.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/use-reduced-motion.test.ts:33:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/19]⎯
+
+ FAIL  tests/unit/white-flash.test.tsx [ tests/unit/white-flash.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/white-flash.test.tsx:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/19]⎯
+
+
+ Test Files  19 failed (19)
+      Tests  no tests
+   Start at  02:49:53
+   Duration  1.69s (transform 1.08s, setup 0ms, import 0ms, tests 0ms, environment 17.90s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (556ms)
+
+  1 passed (1.3s)
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m2:50AM[0m [32mINF[0m 65 commits scanned.
+[90m2:50AM[0m [32mINF[0m scan completed in 213ms
+[90m2:50AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK

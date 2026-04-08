@@ -1,0 +1,88 @@
+=== typecheck ===
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+=== lint ===
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+=== test ===
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  2 passed (2)
+      Tests  4 passed (4)
+   Start at  23:56:53
+   Duration  580ms (transform 41ms, setup 0ms, import 58ms, tests 7ms, environment 888ms)
+
+=== test:e2e ===
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+[2m[WebServer] [22m[33m[1m⚠[22m[39m The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (353ms)
+
+  1 passed (8.7s)
+=== check-rls ===
+check-rls: OK
+=== check-tenant-id ===
+check-tenant-id: OK
+=== check-forbidden-terms ===
+check-forbidden-terms: OK
+=== check-i18n ===
+check-i18n: OK
+=== gitleaks ===
+[90m11:57PM[0m [32mINF[0m 35 commits scanned.
+[90m11:57PM[0m [32mINF[0m scan completed in 155ms
+[90m11:57PM[0m [32mINF[0m no leaks found
+=== npm audit ===
+found 0 vulnerabilities
+=== build ===
+
+> blueprint@0.1.0 prebuild
+> tsx scripts/collect-build-metadata.ts
+
+[collect-build-metadata] sha=57b09a0 specs=2 tasks=184
+
+> blueprint@0.1.0 build
+> next build
+
+▲ Next.js 16.2.2 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 1959ms
+  Running TypeScript ...
+  Finished TypeScript in 1874ms ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/7) ...
+  Generating static pages using 5 workers (1/7) 
+  Generating static pages using 5 workers (3/7) 
+  Generating static pages using 5 workers (5/7) 
+✓ Generating static pages using 5 workers (7/7) in 253ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+└ ƒ /[locale]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

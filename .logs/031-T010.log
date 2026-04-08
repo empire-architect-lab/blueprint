@@ -1,0 +1,107 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+
+C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\src\components\cursor\particles.tsx
+  112:5  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\src\components\cursor\particles.tsx:112:5
+  110 |     geo.setAttribute("aEarth", new BufferAttribute(earth, 3));
+  111 |     const mat = createParticleMaterial();
+> 112 |     materialRef.current = mat;
+      |     ^^^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  113 |     if (handleRef) {
+  114 |       handleRef.current = {
+  115 |         dissolveFromTerminal: () => {  react-hooks/refs
+  114:7  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\src\components\cursor\particles.tsx:114:7
+  112 |     materialRef.current = mat;
+  113 |     if (handleRef) {
+> 114 |       handleRef.current = {
+      |       ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  115 |         dissolveFromTerminal: () => {
+  116 |           tweenProgress(mat, 1);
+  117 |         },                                                               react-hooks/refs
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+[[33mwarn[39m] src/app/[locale]/earth-preview/page.tsx
+[[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  12 passed (12)
+      Tests  254 passed (254)
+   Start at  01:23:04
+   Duration  1.17s (transform 453ms, setup 0ms, import 1.53s, tests 335ms, environment 8.01s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (496ms)
+
+  1 passed (3.6s)
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m1:23AM[0m [32mINF[0m 49 commits scanned.
+[90m1:23AM[0m [32mINF[0m scan completed in 181ms
+[90m1:23AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK

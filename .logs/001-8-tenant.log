@@ -1,0 +1,5 @@
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
