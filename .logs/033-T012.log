@@ -1,0 +1,120 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+
+C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\src\components\cursor\white-flash.tsx
+  55:34  warning  The ref value 'divRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'divRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+✖ 1 problem (0 errors, 1 warning)
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+ ❯ tests/unit/white-flash.test.tsx (1 test | 1 failed) 11ms
+     × dispatches blueprint:cinematic-complete exactly once on trigger 10ms
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/white-flash.test.tsx > <WhiteFlash /> > dispatches blueprint:cinematic-complete exactly once on trigger
+TypeError: window.matchMedia is not a function
+ ❯ getSnapshot src/lib/hooks/use-reduced-motion.ts:16:17
+     14| function getSnapshot(): boolean {
+     15|   if (typeof window === "undefined") return false;
+     16|   return window.matchMedia(QUERY).matches;
+       |                 ^
+     17| }
+     18|
+ ❯ mountSyncExternalStore node_modules/react-dom/cjs/react-dom-client.development.js:8125:24
+ ❯ Object.useSyncExternalStore node_modules/react-dom/cjs/react-dom-client.development.js:26269:16
+ ❯ process.env.NODE_ENV.exports.useSyncExternalStore node_modules/react/cjs/react.development.js:1270:34
+ ❯ useReducedMotion src/lib/hooks/use-reduced-motion.ts:24:10
+ ❯ WhiteFlash src/components/cursor/white-flash.tsx:17:27
+ ❯ Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:25904:20
+ ❯ renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:7662:22
+ ❯ updateForwardRef node_modules/react-dom/cjs/react-dom-client.development.js:9724:19
+ ❯ beginWork node_modules/react-dom/cjs/react-dom-client.development.js:12117:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 13 passed (14)
+      Tests  1 failed | 256 passed (257)
+   Start at  01:53:45
+   Duration  1.29s (transform 626ms, setup 0ms, import 2.02s, tests 344ms, environment 10.53s)
+
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  14 passed (14)
+      Tests  257 passed (257)
+   Start at  01:54:05
+   Duration  1.35s (transform 660ms, setup 0ms, import 2.01s, tests 603ms, environment 9.97s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (480ms)
+
+  1 passed (3.5s)
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m1:54AM[0m [32mINF[0m 53 commits scanned.
+[90m1:54AM[0m [32mINF[0m scan completed in 194ms
+[90m1:54AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK
