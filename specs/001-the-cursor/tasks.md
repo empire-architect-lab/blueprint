@@ -131,13 +131,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T014 — Mobile 2D version
 
-- [ ] `src/components/cursor/cinematic-intro-mobile.tsx` — client component, dynamically imported, only mounts when `useIsMobile() === true`
-- [ ] Beat 1: same `<TerminalTyper />` component reused
-- [ ] Beat 2: inline SVG world map (a simplified Mercator path, ~3KB) with a `<circle>` at Casablanca animated with `<animate>` or CSS `@keyframes`
-- [ ] Beat 3: vertical scroll-driven list of 8 pipeline labels; CSS `scroll-timeline` or Intersection Observer to light each up
-- [ ] Beat 4: hero revealed exactly the same way as desktop (reuse `<Hero />` component)
-- [ ] No Three.js import anywhere in this component's transitive graph — verified via `@next/bundle-analyzer` that the mobile chunk doesn't contain three
-- [ ] Visual confirmation on a DevTools iPhone 12 viewport
+- [x] `src/components/cursor/cinematic-intro-mobile.tsx` — client component, dynamically imported, only mounts when `useIsMobile() === true`
+- [x] Beat 1: same `<TerminalTyper />` component reused
+- [x] Beat 2: inline SVG world map (a simplified Mercator path, ~3KB) with a `<circle>` at Casablanca animated with `<animate>` or CSS `@keyframes`
+- [x] Beat 3: vertical scroll-driven list of 8 pipeline labels; CSS `scroll-timeline` or Intersection Observer to light each up
+- [x] Beat 4: hero revealed exactly the same way as desktop (reuse `<Hero />` component)
+- [x] No Three.js import anywhere in this component's transitive graph — verified via `@next/bundle-analyzer` that the mobile chunk doesn't contain three
+- [x] Visual confirmation on a DevTools iPhone 12 viewport
 
 ## T015 — CinematicRouter orchestrator
 
