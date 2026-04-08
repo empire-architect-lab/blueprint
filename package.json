@@ -7,6 +7,7 @@
     "prebuild": "tsx scripts/collect-build-metadata.ts",
     "build": "next build",
     "start": "next start",
+    "pretypecheck": "tsx scripts/collect-build-metadata.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
