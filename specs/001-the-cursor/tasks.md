@@ -173,7 +173,7 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 - [x] `tests/e2e/cursor-reduced-motion.spec.ts` — Scenario B; use Playwright `emulateMedia({ reducedMotion: 'reduce' })`
 - [x] `tests/e2e/cursor-skip.spec.ts` — Scenario C
 - [x] `tests/e2e/cursor-mobile.spec.ts` — Scenario D; use iPhone 12 device descriptor; assert no three chunk loaded via `page.route`
-- [ ] `tests/e2e/cursor-api-down.spec.ts` — Scenario E; mock `/api/head-commit` to 500
+- [x] `tests/e2e/cursor-api-down.spec.ts` — Scenario E; mock `/api/head-commit` to 500
 - [ ] All 5 green locally with `npm run test:e2e`
 
 ## T019 — Accessibility audit
