@@ -2,7 +2,10 @@
 // no-ops when the global is missing (script blocked, ad-blocker, etc.). No PII
 // payloads — only the closed event-name union below.
 
-export type CinematicEvent = "cinematic_completed" | "cinematic_skipped";
+export type CinematicEvent =
+  | "cinematic_completed"
+  | "cinematic_skipped"
+  | "cinematic_crashed";
 
 type PlausibleFn = (event: string) => void;
 
