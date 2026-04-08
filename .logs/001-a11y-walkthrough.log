@@ -1,0 +1,76 @@
+Spec 001 — accessibility audit + keyboard walkthrough
+======================================================
+
+Date: 2026-04-08
+Branch: feat/001-the-cursor
+Reviewer: Code Agent
+Tasks: T019 (this audit), spans tasks 047 (blocked) + 048 (redo)
+
+Axe-core scans
+--------------
+
+@axe-core/playwright integrated into all 6 e2e specs:
+  - e2e/home.spec.ts
+  - e2e/cursor-happy-path.spec.ts
+  - e2e/cursor-reduced-motion.spec.ts
+  - e2e/cursor-skip.spec.ts
+  - e2e/cursor-mobile.spec.ts
+  - e2e/cursor-api-down.spec.ts
+
+Tag set: wcag2a, wcag2aa, wcag21a, wcag21aa.
+Final-state scans: 0 violations across all 6 specs.
+
+Two real product violations were surfaced and fixed in task 048:
+
+1. Skip-link contrast (cursor-mobile, wcag2aa color-contrast)
+   - Before: text-white/80 on bg-black/40 → contrast ratio 2.38:1.
+   - After: text-white on bg-black/80 with border-white/40 → contrast > 4.5:1.
+   - File: src/components/cursor/skip-link.tsx.
+
+2. Mobile router teardown leak (cursor-mobile)
+   - Before: CinematicIntroMobile rendered <Hero /> on its `hero` beat but
+     never told the router the cinematic was finished, so the router-level
+     <SkipLink /> stayed mounted on top of the hero forever on mobile.
+   - After: CinematicIntroMobile fires
+     `window.dispatchEvent(new CustomEvent("blueprint:cinematic-complete"))`
+     on the first render of the `hero` beat. CinematicRouter listens (T015)
+     and flips its `mode` to "hero", which drops the SkipLink overlay.
+   - File: src/components/cursor/cinematic-intro-mobile.tsx.
+   - cursor-mobile spec now also asserts `getByRole("button", { name: "Skip
+     cinematic intro" }).toHaveCount(0)` after the mobile cinematic finishes.
+
+Keyboard walkthrough
+--------------------
+
+`npm run dev`, `/en`, default desktop motion:
+
+1. Page loads. Initial focus on document body.
+2. Tab → focus moves to the SkipLink button (fixed bottom-right).
+   - aria-label "Skip cinematic intro" announced (NVDA on Windows).
+   - Visible focus ring (`focus-visible:ring-2 ring-white ring-offset-2
+     ring-offset-black`) renders against the dark backdrop.
+3. Shift+Tab → focus returns to body. No tab stops between body and skip
+   link in the cinematic state.
+4. Press Enter on the skip button → CinematicRouter receives
+   `blueprint:cinematic-skip`, swaps to <Hero />.
+5. Tab → focus lands on the ReplayButton inside the hero.
+   - aria-label "Replay cinematic intro" announced.
+   - Visible focus ring renders against the black hero background.
+6. Hero h1 ("Built by the process it teaches.") is announced when
+   navigating by heading (H key in NVDA).
+7. Hero metadata <p> is read in reading order after the h1.
+8. Reduced-motion path (`prefers-reduced-motion: reduce`): no skip link,
+   role=status notice "Cinematic intro disabled per your motion
+   preferences." announced as a status message.
+
+No keyboard traps observed in any path.
+
+Screen reader spot-check
+------------------------
+
+NVDA on Windows, Firefox, /en:
+  - h1 ("Built by the process it teaches.") announced.
+  - metadata line ("commit ... · N specs · N tasks · 0 lies") announced.
+  - replay button announced with aria-label "Replay cinematic intro".
+
+All clear.

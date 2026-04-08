@@ -1,0 +1,5 @@
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities

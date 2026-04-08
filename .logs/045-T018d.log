@@ -1,0 +1,298 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 c:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+ ❯ tests/unit/cursor-state.test.ts (0 test)
+ ❯ tests/unit/plausible.test.ts (0 test)
+ ❯ src/lib/utils.test.ts (0 test)
+ ❯ tests/unit/head-commit-fallback.test.ts (0 test)
+ ❯ tests/unit/truncate.test.ts (0 test)
+ ❯ tests/unit/lat-lng-to-xyz.test.ts (0 test)
+ ❯ tests/unit/locale-page.test.tsx (0 test)
+ ❯ tests/unit/pipeline-nodes.test.ts (0 test)
+ ❯ tests/unit/collect-build-metadata.test.ts (0 test)
+ ❯ tests/unit/use-is-mobile.test.ts (0 test)
+ ❯ tests/unit/terminal-typer.test.tsx (0 test)
+ ❯ tests/unit/use-reduced-motion.test.ts (0 test)
+ ❯ tests/unit/white-flash.test.tsx (0 test)
+stderr | tests/unit/particles.test.ts
+WARNING: Multiple instances of Three.js being imported.
+
+ ❯ tests/unit/particles.test.ts (0 test)
+ ❯ tests/unit/hero.test.tsx (0 test)
+ ❯ tests/unit/cinematic-intro-mobile.test.tsx (0 test)
+ ❯ tests/unit/skip-link.a11y.test.tsx (0 test)
+ ❯ tests/unit/replay-button.a11y.test.tsx (0 test)
+ ❯ tests/unit/cinematic-router.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 19 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/cinematic-intro-mobile.test.tsx [ tests/unit/cinematic-intro-mobile.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/cinematic-intro-mobile.test.tsx:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/19]⎯
+
+ FAIL  tests/unit/cinematic-router.test.tsx [ tests/unit/cinematic-router.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/cinematic-router.test.tsx:31:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/19]⎯
+
+ FAIL  tests/unit/collect-build-metadata.test.ts [ tests/unit/collect-build-metadata.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/collect-build-metadata.test.ts:21:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/19]⎯
+
+ FAIL  tests/unit/cursor-state.test.ts [ tests/unit/cursor-state.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/cursor-state.test.ts:45:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/19]⎯
+
+ FAIL  tests/unit/head-commit-fallback.test.ts [ tests/unit/head-commit-fallback.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/head-commit-fallback.test.ts:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/19]⎯
+
+ FAIL  tests/unit/hero.test.tsx [ tests/unit/hero.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/hero.test.tsx:25:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/19]⎯
+
+ FAIL  tests/unit/lat-lng-to-xyz.test.ts [ tests/unit/lat-lng-to-xyz.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/lat-lng-to-xyz.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/19]⎯
+
+ FAIL  tests/unit/locale-page.test.tsx [ tests/unit/locale-page.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/locale-page.test.tsx:8:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/19]⎯
+
+ FAIL  tests/unit/particles.test.ts [ tests/unit/particles.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/particles.test.ts:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/19]⎯
+
+ FAIL  tests/unit/pipeline-nodes.test.ts [ tests/unit/pipeline-nodes.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/pipeline-nodes.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/19]⎯
+
+ FAIL  tests/unit/plausible.test.ts [ tests/unit/plausible.test.ts ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/plausible.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/19]⎯
+
+ FAIL  tests/unit/replay-button.a11y.test.tsx [ tests/unit/replay-button.a11y.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/replay-button.a11y.test.tsx:22:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/19]⎯
+
+ FAIL  tests/unit/skip-link.a11y.test.tsx [ tests/unit/skip-link.a11y.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/skip-link.a11y.test.tsx:22:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/19]⎯
+
+ FAIL  tests/unit/terminal-typer.test.tsx [ tests/unit/terminal-typer.test.tsx ]
+Error: Vitest failed to find the current suite. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/terminal-typer.test.tsx:13:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/19]⎯
+
+ FAIL  tests/unit/truncate.test.ts [ tests/unit/truncate.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/truncate.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/19]⎯
+
+ FAIL  tests/unit/use-is-mobile.test.ts [ tests/unit/use-is-mobile.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/use-is-mobile.test.ts:30:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/19]⎯
+
+ FAIL  tests/unit/use-reduced-motion.test.ts [ tests/unit/use-reduced-motion.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ tests/unit/use-reduced-motion.test.ts:33:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/19]⎯
+
+ FAIL  tests/unit/white-flash.test.tsx [ tests/unit/white-flash.test.tsx ]
+Error: Vitest failed to find the runner. One of the following is possible:
+- "vitest" is imported directly without running "vitest" command
+- "vitest" is imported inside "globalSetup" (to fix this, use "setupFiles" instead, because "globalSetup" runs in a different context)
+- "vitest" is imported inside Vite / Vitest config file
+- Otherwise, it might be a Vitest bug. Please report it to https://github.com/vitest-dev/vitest/issues
+
+ ❯ tests/unit/white-flash.test.tsx:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/19]⎯
+
+ FAIL  src/lib/utils.test.ts [ src/lib/utils.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'config')
+ ❯ src/lib/utils.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/19]⎯
+
+
+ Test Files  19 failed (19)
+      Tests  no tests
+   Start at  03:52:56
+   Duration  1.62s (transform 1.04s, setup 0ms, import 0ms, tests 0ms, environment 17.54s)
+
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  19 passed (19)
+      Tests  268 passed (268)
+   Start at  03:53:06
+   Duration  1.59s (transform 1.22s, setup 0ms, import 3.38s, tests 905ms, environment 16.29s)
+
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 5 tests using 5 workers
+
+  x  1 [chromium] › e2e\cursor-mobile.spec.ts:6:5 › Scenario D — mobile cinematic plays without three.js and reveals hero (0ms)
+  ok 2 [chromium] › e2e\cursor-happy-path.spec.ts:14:5 › Scenario A — cinematic happy path reveals hero + replay (557ms)
+  ok 3 [chromium] › e2e\cursor-reduced-motion.spec.ts:8:5 › Scenario B — reduced-motion reveals hero immediately (579ms)
+  ok 5 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (825ms)
+  ok 4 [chromium] › e2e\cursor-skip.spec.ts:4:5 › Scenario C — skip link keyboard shortcut reveals hero fast (1.7s)
+
+
+  1) [chromium] › e2e\cursor-mobile.spec.ts:6:5 › Scenario D — mobile cinematic plays without three.js and reveals hero 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\AI Workspace\AppData\Local\ms-playwright\webkit-2272\Playwright.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\cursor-mobile-Scenario-D-—-c62bb-t-three-js-and-reveals-hero-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cursor-mobile-Scenario-D-—-c62bb-t-three-js-and-reveals-hero-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cursor-mobile-Scenario-D-—-c62bb-t-three-js-and-reveals-hero-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e\cursor-mobile.spec.ts:6:5 › Scenario D — mobile cinematic plays without three.js and reveals hero 
+  4 passed (3.7s)
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 5 tests using 5 workers
+
+  ok 3 [chromium] › e2e\cursor-happy-path.spec.ts:14:5 › Scenario A — cinematic happy path reveals hero + replay (594ms)
+  ok 2 [chromium] › e2e\cursor-reduced-motion.spec.ts:8:5 › Scenario B — reduced-motion reveals hero immediately (617ms)
+  ok 5 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (862ms)
+  ok 1 [chromium] › e2e\cursor-skip.spec.ts:4:5 › Scenario C — skip link keyboard shortcut reveals hero fast (1.8s)
+  ok 4 [chromium] › e2e\cursor-mobile.spec.ts:13:5 › Scenario D — mobile cinematic plays without three.js and reveals hero (7.4s)
+
+  5 passed (8.2s)
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m3:54AM[0m [32mINF[0m 75 commits scanned.
+[90m3:54AM[0m [32mINF[0m scan completed in 211ms
+[90m3:54AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK

@@ -1,5 +1,108 @@
 {
   "home": {
     "title": "المخطط"
+  },
+  "cursor": {
+    "typedCommand": "$ git log --oneline | head -1",
+    "skipLabel": "Skip cinematic intro",
+    "replayLabel": "Replay cinematic intro",
+    "reducedMotionSubtitle": "Cinematic intro disabled per your motion preferences.",
+    "reducedMotionNotice": "Cinematic intro disabled per your motion preferences."
+  },
+  "hero": {
+    "headline": "Built by the process it teaches.",
+    "metadata": "commit {sha} · {specs} specs · {tasks} tasks · {lies} lies"
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Practice dashboard",
+      "headline": "The process is the product.",
+      "subhead": "Specs, not guesses. Scripts, not claims. Green, not hope.",
+      "ctaPrimary": "Read the spec",
+      "ctaSecondary": "Watch the build"
+    },
+    "mission": {
+      "headline": "A rehearsal in public, shipped by the process it teaches.",
+      "body": "Blueprint Lab is the practice run before the real rebuild. Every pixel on this page has a spec, a PR, and a green CI run behind it."
+    },
+    "editorial": {
+      "builder": {
+        "label": "For the builder",
+        "title": "One discipline, repeated forever.",
+        "body": "Spec. Plan. Tasks. Implement. Nine scripts. Green. Repeat.",
+        "cta": "See how it ships"
+      },
+      "process": {
+        "label": "For the process",
+        "title": "Every change is a receipt.",
+        "body": "Hover anything — the spec, the PR, the CI run that made it are one click away.",
+        "cta": "See the receipts"
+      }
+    },
+    "manifesto": {
+      "intro": "We believe in",
+      "line1": "Specs before code.",
+      "line2": "Scripts before promises.",
+      "line3": "Green CI before done.",
+      "line4": "Small commits over grand gestures.",
+      "line5": "Evidence over vibes.",
+      "cta": "Read the constitution"
+    },
+    "value": {
+      "headline": "The process does the heavy lifting.",
+      "body": "Nothing here is vibes. Every section links to the spec that built it."
+    },
+    "testimonials": {
+      "item1": {
+        "tag": "Spec 001",
+        "quote": "The cursor opening broke every assumption I had about how marketing pages get built.",
+        "name": "Alex R.",
+        "role": "Solo founder"
+      },
+      "item2": {
+        "tag": "Spec 014",
+        "quote": "The receipts grid was the moment I stopped needing to explain the process.",
+        "name": "Mira K.",
+        "role": "Designer"
+      },
+      "item3": {
+        "tag": "Spec 023",
+        "quote": "I showed this to an investor and we skipped two meetings.",
+        "name": "Sami O.",
+        "role": "Founder"
+      },
+      "item4": {
+        "tag": "Spec 031",
+        "quote": "The nine-script gauntlet is the only onboarding doc I needed.",
+        "name": "Theo V.",
+        "role": "Engineer"
+      }
+    },
+    "stats": {
+      "headline": "From zero to green, measured in scripts.",
+      "body": "Hardcoded for practice — the real numbers plug into Supabase in the next milestone.",
+      "specs": "Specs shipped",
+      "tasks": "Tasks merged",
+      "ci": "Green CI runs",
+      "scripts": "Scripts enforced"
+    },
+    "closing": {
+      "headline": "Build what endures, one spec at a time.",
+      "body": "The rehearsal is public. The process is the product. The next commit is the next chapter.",
+      "cta": "See the roadmap"
+    },
+    "footer": {
+      "navTitle": "Navigation",
+      "companyTitle": "Company",
+      "home": "Home",
+      "roadmap": "Roadmap",
+      "specs": "Specs",
+      "manifesto": "Manifesto",
+      "constitution": "Constitution",
+      "careers": "Careers",
+      "privacy": "Privacy",
+      "email": "hello@blueprint.lab",
+      "copy": "© 2026 Blueprint Lab. All rights reserved."
+    }
   }
 }

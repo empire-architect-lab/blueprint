@@ -1,0 +1,128 @@
+=== typecheck ===
+
+> blueprint@0.1.0 pretypecheck
+> tsx scripts/collect-build-metadata.ts
+
+[collect-build-metadata] sha=37f251d specs=3 tasks=213
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/locale-page.test.tsx(13,48): error TS2741: Property 'params' is missing in type '{}' but required in type '{ params: Promise<{ locale: string; }>; }'.
+
+=== lint ===
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+
+C:\Users\AI Workspace\Projects\Blueprint Lab\blueprint\analyze_sequel.js
+  1:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 1 problem (1 error, 0 warnings)
+
+NOTE: analyze_sequel.js is untracked local scratch, not in task scope. Will not appear in CI clean checkout.
+
+=== lint src only ===
+
+=== src-only eslint: clean ===
+=== prettier: clean ===
+
+=== vitest ===
+
+> blueprint@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+stderr | tests/unit/locale-page.test.tsx > LocaleHomePage > renders <main> with the cinematic router mounted
+<LocaleHomePage> is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.
+
+stderr | tests/unit/locale-page.test.tsx > LocaleHomePage > renders <main> with the cinematic router mounted
+A suspended resource finished loading inside a test, but the event was not wrapped in act(...).
+
+When testing, code that resolves suspended data should be wrapped into act(...):
+
+act(() => {
+  /* finish loading suspended data */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+A component suspended inside an `act` scope, but the `act` call was not awaited. When testing React components that depend on asynchronous data, you must await the result:
+
+await act(() => ...)
+
+ ❯ tests/unit/locale-page.test.tsx (2 tests | 1 failed) 378ms
+     × renders <main> with the cinematic router mounted 375ms
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/locale-page.test.tsx > LocaleHomePage > renders <main> with the cinematic router mounted
+AssertionError: expected null not to be null
+ ❯ tests/unit/locale-page.test.tsx:15:22
+     13|     const { container, getByTestId } = render(<LocaleHomePage />);
+     14|     const main = container.querySelector("main");
+     15|     expect(main).not.toBeNull();
+       |                      ^
+     16|     expect(main?.className).toContain("min-h-screen");
+     17|     expect(main?.className).toContain("bg-black");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 18 passed (19)
+      Tests  1 failed | 267 passed (268)
+   Start at  14:20:19
+   Duration  6.87s (transform 1.81s, setup 0ms, import 11.30s, tests 1.29s, environment 74.41s)
+
+
+=== gitleaks ===
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m2:20PM[0m [32mINF[0m 104 commits scanned.
+[90m2:20PM[0m [32mINF[0m scan completed in 595ms
+[90m2:20PM[0m [32mINF[0m no leaks found
+
+=== npm audit ===
+
+> blueprint@0.1.0 scan:deps
+> npm audit --audit-level=high
+
+found 0 vulnerabilities
+
+=== check-rls ===
+
+> blueprint@0.1.0 scan:rls
+> bash scripts/check-rls.sh
+
+check-rls: OK
+
+=== check-tenant-id ===
+
+> blueprint@0.1.0 scan:tenant
+> bash scripts/check-tenant-id.sh
+
+check-tenant-id: OK
+
+=== check-forbidden-terms ===
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+=== check-i18n ===
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK
+
+=== playwright ===
+DEFERRED to CI — needs running dev server, not practical locally for this task.

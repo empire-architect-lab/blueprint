@@ -1,0 +1,39 @@
+
+> blueprint@0.1.0 test
+> vitest run tests/unit/use-reduced-motion.test.ts tests/unit/use-is-mobile.test.ts
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  00:28:13
+   Duration  689ms (transform 39ms, setup 0ms, import 208ms, tests 20ms, environment 951ms)
+
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+
+ RUN  v4.1.3 C:/Users/AI Workspace/Projects/Blueprint Lab/blueprint
+
+
+ Test Files  6 passed (6)
+      Tests  18 passed (18)
+   Start at  00:28:33
+   Duration  764ms (transform 159ms, setup 0ms, import 404ms, tests 36ms, environment 3.16s)
+
+
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (478ms)
+
+  1 passed (3.4s)

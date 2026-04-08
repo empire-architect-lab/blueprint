@@ -1,0 +1,1 @@
+T018c GAP: SkipLink component exists at src/components/cursor/skip-link.tsx but is not mounted in CinematicRouter or any homepage route. Cannot satisfy 'Tab to skip link, press Enter' acceptance without product changes (which the whitelist forbids). No test committed.
