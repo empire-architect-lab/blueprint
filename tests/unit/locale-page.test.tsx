@@ -4,7 +4,7 @@ import { render, cleanup } from "@testing-library/react";
 vi.mock("next-intl/server", () => ({
   getTranslations: async () => {
     const t = (key: string) => key;
-    t.raw = (_key: string) => [] as unknown[];
+    t.raw = () => [] as unknown[];
     return t;
   },
 }));
