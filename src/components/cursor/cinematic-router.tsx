@@ -15,6 +15,12 @@ import { track } from "@/lib/analytics/plausible";
 
 export const CINEMATIC_SKIP_EVENT = "blueprint:cinematic-skip";
 
+// Hard upper bound on cinematic-intro duration. If the intro never fires
+// CINEMATIC_COMPLETE_EVENT (e.g. desktop placeholder still uses earth-scene
+// preview wrapper which has no completion mechanism), force-flip to the hero
+// after this many ms so the user is never stuck on a black screen.
+const CINEMATIC_MAX_DURATION_MS = 6000;
+
 // Desktop cinematic-intro.tsx is added in a follow-up task; until then, the
 // router dynamic-imports the existing earth-scene preview wrapper as a
 // placeholder. Both code paths are bundle-split so the unused one is not
@@ -78,6 +84,17 @@ export function CinematicRouter() {
       window.removeEventListener(CINEMATIC_REPLAY_EVENT, onReplay);
     };
   }, []);
+
+  // Failsafe: if the cinematic intro never fires its completion event, fall
+  // through to the hero after CINEMATIC_MAX_DURATION_MS so the user is never
+  // stuck staring at a black screen.
+  useEffect(() => {
+    if (mode !== "cinematic") return;
+    const id = window.setTimeout(() => {
+      setMode("hero");
+    }, CINEMATIC_MAX_DURATION_MS);
+    return () => window.clearTimeout(id);
+  }, [mode]);
 
   if (reduced) {
     return (
