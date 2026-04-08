@@ -14,6 +14,7 @@ export type CursorScrollTimelineOptions = {
   scroller: HTMLElement;
   cameraY: { value: number };
   onLitIndexChange: (index: number) => void;
+  onFlashTrigger?: () => void;
 };
 
 export function createCursorScrollTimeline({
@@ -21,7 +22,9 @@ export function createCursorScrollTimeline({
   scroller,
   cameraY,
   onLitIndexChange,
+  onFlashTrigger,
 }: CursorScrollTimelineOptions) {
+  let flashFired = false;
   // Lenis → ScrollTrigger sync
   lenis.on("scroll", ScrollTrigger.update);
 
@@ -54,6 +57,10 @@ export function createCursorScrollTimeline({
       onUpdate: (self) => {
         const idx = Math.floor(self.progress * totalNodes);
         onLitIndexChange(Math.min(idx, totalNodes - 1));
+        if (!flashFired && self.progress >= 0.95 && onFlashTrigger) {
+          flashFired = true;
+          onFlashTrigger();
+        }
       },
     },
   });

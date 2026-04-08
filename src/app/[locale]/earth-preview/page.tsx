@@ -7,6 +7,11 @@ import Lenis from "lenis";
 import { Earth } from "@/components/cursor/earth";
 import { Particles, type ParticlesHandle } from "@/components/cursor/particles";
 import { PipelineScene } from "@/components/cursor/pipeline-scene";
+import {
+  WhiteFlash,
+  type WhiteFlashHandle,
+  CINEMATIC_COMPLETE_EVENT,
+} from "@/components/cursor/white-flash";
 import { createCursorScrollTimeline } from "@/lib/animations/cursor-scroll-timeline";
 
 function CameraRig({ y }: { y: { value: number } }) {
@@ -18,8 +23,18 @@ function CameraRig({ y }: { y: { value: number } }) {
 
 export default function EarthPreviewPage() {
   const handleRef = useRef<ParticlesHandle | null>(null);
+  const flashRef = useRef<WhiteFlashHandle>(null);
   const cameraY = useMemo(() => ({ value: 0 }), []);
   const [litIndex, setLitIndex] = useState(-1);
+
+  useEffect(() => {
+    const onComplete = () => {
+      // Hero handoff hook (T013 will mount the real hero here).
+    };
+    window.addEventListener(CINEMATIC_COMPLETE_EVENT, onComplete);
+    return () =>
+      window.removeEventListener(CINEMATIC_COMPLETE_EVENT, onComplete);
+  }, []);
 
   useEffect(() => {
     if (process.env.NODE_ENV !== "development") return;
@@ -44,6 +59,7 @@ export default function EarthPreviewPage() {
       scroller: document.documentElement,
       cameraY: cameraY,
       onLitIndexChange: setLitIndex,
+      onFlashTrigger: () => flashRef.current?.trigger(),
     });
 
     return () => {
@@ -65,6 +81,7 @@ export default function EarthPreviewPage() {
         </Canvas>
       </div>
       <div style={{ height: "500vh" }} aria-hidden="true" />
+      <WhiteFlash ref={flashRef} />
     </main>
   );
 }

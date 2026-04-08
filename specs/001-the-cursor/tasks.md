@@ -115,9 +115,9 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T012 — White flash + hero reveal handoff
 
-- [ ] `src/components/cursor/white-flash.tsx` — full-viewport `<div>` that fades in/out over 120ms total (60 in, 60 out) using GSAP
-- [ ] Triggered by the ScrollTrigger when the camera passes the Vercel node (progress ≥ ~0.95)
-- [ ] On flash end, dispatches `blueprint:cinematic-complete` event; the `CinematicRouter` listens and unmounts the cinematic, revealing the hero
+- [x] `src/components/cursor/white-flash.tsx` — full-viewport `<div>` that fades in/out over 120ms total (60 in, 60 out) using GSAP
+- [x] Triggered by the ScrollTrigger when the camera passes the Vercel node (progress ≥ ~0.95)
+- [x] On flash end, dispatches `blueprint:cinematic-complete` event; the `CinematicRouter` listens and unmounts the cinematic, revealing the hero
 
 ## T013 — Hero component
 
