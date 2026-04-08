@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 // Spec 001 — Scenario E — head-commit API returns 500.
 //
@@ -36,4 +37,9 @@ test("Scenario E — head-commit API down still reveals hero", async ({
 
   const uncaught = consoleErrors.filter((m) => /uncaught|unhandled/i.test(m));
   expect(uncaught).toEqual([]);
+
+  const axe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(axe.violations).toEqual([]);
 });

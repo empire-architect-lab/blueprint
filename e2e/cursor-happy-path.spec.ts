@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 // Spec 001 — Scenario A — desktop cinematic happy path.
 //
@@ -30,4 +31,9 @@ test("Scenario A — cinematic happy path reveals hero + replay", async ({
   // Replay button — aria-label from the cursor.replayLabel i18n key.
   const replay = page.getByRole("button", { name: "Replay cinematic intro" });
   await expect(replay).toBeVisible();
+
+  const axe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(axe.violations).toEqual([]);
 });

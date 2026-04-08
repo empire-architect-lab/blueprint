@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 // Spec 001 — Scenario C — desktop, motion enabled, skip-intro link reveals hero.
 test("Scenario C — skip link keyboard shortcut reveals hero fast", async ({
@@ -25,4 +26,9 @@ test("Scenario C — skip link keyboard shortcut reveals hero fast", async ({
 
   const replay = page.getByRole("button", { name: "Replay cinematic intro" });
   await expect(replay).toBeVisible();
+
+  const axe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(axe.violations).toEqual([]);
 });

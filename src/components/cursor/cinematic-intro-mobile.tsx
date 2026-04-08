@@ -43,6 +43,13 @@ export function CinematicIntroMobile() {
     return () => clearInterval(id);
   }, [beat]);
 
+  useEffect(() => {
+    if (beat !== "hero") return;
+    // Tell the router the mobile cinematic is finished so it can unmount the
+    // SkipLink overlay sibling.
+    window.dispatchEvent(new CustomEvent("blueprint:cinematic-complete"));
+  }, [beat]);
+
   if (beat === "hero") {
     return <Hero />;
   }

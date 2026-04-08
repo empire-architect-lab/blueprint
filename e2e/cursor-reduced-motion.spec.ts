@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 // Spec 001 — Scenario B — reduced-motion path.
 //
@@ -24,4 +25,9 @@ test("Scenario B — reduced-motion reveals hero immediately", async ({
   await expect(page.getByRole("status")).toHaveText(
     "Cinematic intro disabled per your motion preferences.",
   );
+
+  const axe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(axe.violations).toEqual([]);
 });

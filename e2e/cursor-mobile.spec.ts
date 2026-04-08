@@ -1,4 +1,5 @@
 import { test, expect, devices } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 // iPhone 12's default browser is webkit; the playwright project here only
 // installs chromium, so override to chromium with the iPhone 12 viewport +
@@ -34,4 +35,15 @@ test("Scenario D — mobile cinematic plays without three.js and reveals hero", 
   // The mobile chunk must not pull in three.js (case-insensitive match).
   const threeRequests = requestUrls.filter((u) => /three/i.test(u));
   expect(threeRequests).toEqual([]);
+
+  // Confirm the SkipLink overlay was unmounted by the router after the
+  // mobile cinematic finished (T019 fix — see cinematic-intro-mobile.tsx).
+  await expect(
+    page.getByRole("button", { name: "Skip cinematic intro" }),
+  ).toHaveCount(0);
+
+  const axe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(axe.violations).toEqual([]);
 });

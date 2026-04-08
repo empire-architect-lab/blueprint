@@ -174,14 +174,14 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 - [x] `tests/e2e/cursor-skip.spec.ts` — Scenario C
 - [x] `tests/e2e/cursor-mobile.spec.ts` — Scenario D; use iPhone 12 device descriptor; assert no three chunk loaded via `page.route`
 - [x] `tests/e2e/cursor-api-down.spec.ts` — Scenario E; mock `/api/head-commit` to 500
-- [ ] All 5 green locally with `npm run test:e2e`
+- [x] All 5 green locally with `npm run test:e2e`
 
 ## T019 — Accessibility audit
 
-- [ ] `@axe-core/playwright` integrated into the 5 e2e tests (run `axe` on each page at the final state)
-- [ ] 0 violations on all 5
-- [ ] Keyboard-only walkthrough recorded as a note in `.logs/001-a11y-walkthrough.log`: Tab → skip link, Shift+Tab → nothing, Tab again after reveal → replay button
-- [ ] Screen reader spot-check with NVDA or VoiceOver on the hero: h1 is announced, metadata is announced, replay button is announced with its aria-label
+- [x] `@axe-core/playwright` integrated into the 5 e2e tests (run `axe` on each page at the final state)
+- [x] 0 violations on all 5
+- [x] Keyboard-only walkthrough recorded as a note in `.logs/001-a11y-walkthrough.log`: Tab → skip link, Shift+Tab → nothing, Tab again after reveal → replay button
+- [x] Screen reader spot-check with NVDA or VoiceOver on the hero: h1 is announced, metadata is announced, replay button is announced with its aria-label
 
 ## T020 — Performance audit
 
