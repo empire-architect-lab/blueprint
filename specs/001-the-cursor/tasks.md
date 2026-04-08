@@ -121,13 +121,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T013 — Hero component
 
-- [ ] `src/components/hero/hero.tsx` — server component
-- [ ] Reads `BUILD_METADATA` from `src/content/build-metadata.ts`
-- [ ] Reads head commit via server fetch to `/api/head-commit` (Next fetch cache will hit the same 60s revalidate)
-- [ ] Renders `<h1 className="font-display text-[220px] leading-none">` with the i18n key `hero.headline`
-- [ ] Renders `<p className="font-mono text-[18px]">` with the i18n key `hero.metadata` interpolating sha, specs, tasks, lies
-- [ ] Contains the `<ReplayButton />` in the bottom-right corner
-- [ ] Has `data-spec-id="001-the-cursor"` on the root element (future hook for Spec 005)
+- [x] `src/components/hero/hero.tsx` — server component
+- [x] Reads `BUILD_METADATA` from `src/content/build-metadata.ts`
+- [x] Reads head commit via server fetch to `/api/head-commit` (Next fetch cache will hit the same 60s revalidate)
+- [x] Renders `<h1 className="font-display text-[220px] leading-none">` with the i18n key `hero.headline`
+- [x] Renders `<p className="font-mono text-[18px]">` with the i18n key `hero.metadata` interpolating sha, specs, tasks, lies
+- [x] Contains the `<ReplayButton />` in the bottom-right corner
+- [x] Has `data-spec-id="001-the-cursor"` on the root element (future hook for Spec 005)
 
 ## T014 — Mobile 2D version
 

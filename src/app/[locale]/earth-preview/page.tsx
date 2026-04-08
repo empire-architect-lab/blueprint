@@ -12,6 +12,7 @@ import {
   type WhiteFlashHandle,
   CINEMATIC_COMPLETE_EVENT,
 } from "@/components/cursor/white-flash";
+import { Hero } from "@/components/hero/hero";
 import { createCursorScrollTimeline } from "@/lib/animations/cursor-scroll-timeline";
 
 function CameraRig({ y }: { y: { value: number } }) {
@@ -26,11 +27,10 @@ export default function EarthPreviewPage() {
   const flashRef = useRef<WhiteFlashHandle>(null);
   const cameraY = useMemo(() => ({ value: 0 }), []);
   const [litIndex, setLitIndex] = useState(-1);
+  const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
-    const onComplete = () => {
-      // Hero handoff hook (T013 will mount the real hero here).
-    };
+    const onComplete = () => setHeroVisible(true);
     window.addEventListener(CINEMATIC_COMPLETE_EVENT, onComplete);
     return () =>
       window.removeEventListener(CINEMATIC_COMPLETE_EVENT, onComplete);
@@ -81,6 +81,7 @@ export default function EarthPreviewPage() {
         </Canvas>
       </div>
       <div style={{ height: "500vh" }} aria-hidden="true" />
+      {heroVisible && <Hero />}
       <WhiteFlash ref={flashRef} />
     </main>
   );
