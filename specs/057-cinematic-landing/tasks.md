@@ -1,9 +1,9 @@
 # Tasks 057 — Cinematic Landing
 
-- [ ] **T001** Fetch hero video (Pexels/Coverr CC0, <10MB) → `public/video/hero.mp4`
-- [ ] **T002** Fetch editorial images (2 Unsplash CC0) → `public/images/editorial/`
-- [ ] **T003** Fetch avatars (4 Unsplash CC0) → `public/images/avatars/`
-- [ ] **T004** Fetch stack logo SVGs (10 from simpleicons) → `public/logos/`
+- [x] **T001** Fetch hero video (Pexels/Coverr CC0, <10MB) → `public/video/hero.mp4`
+- [x] **T002** Fetch editorial images (2 Unsplash CC0) → `public/images/editorial/`
+- [x] **T003** Fetch avatars (4 Unsplash CC0) → `public/images/avatars/`
+- [x] **T004** Fetch stack logo SVGs (10 from simpleicons) → `public/logos/`
 - [x] **T005** Ensure Fraunces via `next/font/google` (reuse or add) — reused existing `font-display` var (CabinetGrotesk wired to `--font-display`)
 - [x] **T006** Build `components/cinematic/SplitHeading.tsx` (server, a11y-safe)
 - [x] **T007** Build `components/cinematic/ScrollReveal.tsx` (client, IO)
@@ -18,17 +18,17 @@
 - [x] **T016** Add `landing.*` i18n keys to `messages/en.json`
 - [x] **T017** Mirror keys to `messages/{fr,ar,nl}.json`
 - [x] **T018** Rewrite `app/[locale]/page.tsx` composing the 8 sections in sequel.co order
-- [ ] **T019** Run `tsc --noEmit` → log
-- [ ] **T020** Run `eslint` + `prettier` → log
-- [ ] **T021** Run `vitest` unit → log
-- [ ] **T022** Run `playwright` e2e (landing smoke) → log
-- [ ] **T023** Run `gitleaks` → log
-- [ ] **T024** Run `npm audit` → log
-- [ ] **T025** Run `check-rls.sh` + `check-tenant-id.sh` + `check-forbidden-terms.sh` + `check-i18n.sh` → log
-- [ ] **T026** Commit product changes in logical groups on `feat/057-cinematic-landing`
-- [ ] **T027** Open PR against `main` (or `fix/056-...` if not merged)
-- [ ] **T028** Capture Vercel preview URL + green CI → `.opus/outbox/057-reply.md`
-- [ ] **T029** Bookkeeping commit: `.logs/057.log` + outbox reply + consumed inbox file
+- [x] **T019** Run `tsc --noEmit` → log
+- [x] **T020** Run `eslint` + `prettier` → log
+- [x] **T021** Run `vitest` unit → log
+- [x] **T022** Run `playwright` e2e (landing smoke) → log
+- [x] **T023** Run `gitleaks` → log
+- [x] **T024** Run `npm audit` → log
+- [x] **T025** Run `check-rls.sh` + `check-tenant-id.sh` + `check-forbidden-terms.sh` + `check-i18n.sh` → log
+- [x] **T026** Commit product changes in logical groups on `feat/057-cinematic-landing`
+- [x] **T027** Open PR against `main` (or `fix/056-...` if not merged)
+- [x] **T028** Capture Vercel preview URL + green CI → `.opus/outbox/057-reply.md`
+- [x] **T029** Bookkeeping commit: `.logs/057.log` + outbox reply + consumed inbox file
 
 ## Definition of done
 
