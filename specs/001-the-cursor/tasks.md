@@ -141,13 +141,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T015 — CinematicRouter orchestrator
 
-- [ ] `src/components/cursor/cinematic-router.tsx` — client component
-- [ ] Reads `useReducedMotion()` and `useIsMobile()`
-- [ ] If reduced motion OR JS disabled path: renders `<Hero />` only, plus the "Cinematic intro disabled per your motion preferences." subtitle
-- [ ] If mobile + motion: dynamic imports `<CinematicIntroMobile />`
-- [ ] If desktop + motion: dynamic imports `<CinematicIntro />`
-- [ ] Listens for `blueprint:cinematic-skip` and `blueprint:cinematic-complete` events and swaps to `<Hero />`
-- [ ] Listens for `blueprint:cinematic-replay` from the hero and re-mounts the cinematic
+- [x] `src/components/cursor/cinematic-router.tsx` — client component
+- [x] Reads `useReducedMotion()` and `useIsMobile()`
+- [x] If reduced motion OR JS disabled path: renders `<Hero />` only, plus the "Cinematic intro disabled per your motion preferences." subtitle
+- [x] If mobile + motion: dynamic imports `<CinematicIntroMobile />`
+- [x] If desktop + motion: dynamic imports `<CinematicIntro />`
+- [x] Listens for `blueprint:cinematic-skip` and `blueprint:cinematic-complete` events and swaps to `<Hero />`
+- [x] Listens for `blueprint:cinematic-replay` from the hero and re-mounts the cinematic
 
 ## T016 — Homepage integration
 

@@ -6,7 +6,8 @@
     "typedCommand": "$ git log --oneline | head -1",
     "skipLabel": "Skip cinematic intro",
     "replayLabel": "Replay cinematic intro",
-    "reducedMotionSubtitle": "Cinematic intro disabled per your motion preferences."
+    "reducedMotionSubtitle": "Cinematic intro disabled per your motion preferences.",
+    "reducedMotionNotice": "Cinematic intro disabled per your motion preferences."
   },
   "hero": {
     "headline": "Built by the process it teaches.",

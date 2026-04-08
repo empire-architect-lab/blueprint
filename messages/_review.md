@@ -15,6 +15,7 @@ Do not paste actual translations here. This file is an index only so that
 - cursor.skipLabel
 - cursor.replayLabel
 - cursor.reducedMotionSubtitle
+- cursor.reducedMotionNotice
 - hero.headline
 - hero.metadata
 
@@ -24,6 +25,7 @@ Do not paste actual translations here. This file is an index only so that
 - cursor.skipLabel
 - cursor.replayLabel
 - cursor.reducedMotionSubtitle
+- cursor.reducedMotionNotice
 - hero.headline
 - hero.metadata
 
@@ -33,5 +35,6 @@ Do not paste actual translations here. This file is an index only so that
 - cursor.skipLabel
 - cursor.replayLabel
 - cursor.reducedMotionSubtitle
+- cursor.reducedMotionNotice
 - hero.headline
 - hero.metadata
