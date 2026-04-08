@@ -98,10 +98,10 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T010 — Particle dissolve system
 
-- [ ] `src/components/cursor/particles.tsx` — `BufferGeometry` with ~3000 points, custom shader for glow
-- [ ] Exposes two animation functions: `dissolveFromTerminal()` and `reformAsEarth()`
-- [ ] Integrates with the master GSAP timeline via callbacks (not GSAP on the particle object directly — use GSAP to tween a progress uniform `uProgress` from 0 → 1)
-- [ ] Visual confirmation on localhost: triggers on a dev-only keypress (`d` dissolves, `r` reforms) behind `process.env.NODE_ENV === "development"`
+- [x] `src/components/cursor/particles.tsx` — `BufferGeometry` with ~3000 points, custom shader for glow
+- [x] Exposes two animation functions: `dissolveFromTerminal()` and `reformAsEarth()`
+- [x] Integrates with the master GSAP timeline via callbacks (not GSAP on the particle object directly — use GSAP to tween a progress uniform `uProgress` from 0 → 1)
+- [x] Visual confirmation on localhost: triggers on a dev-only keypress (`d` dissolves, `r` reforms) behind `process.env.NODE_ENV === "development"`
 
 ## T011 — Pipeline scene + scroll flythrough
 
