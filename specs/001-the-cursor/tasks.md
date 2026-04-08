@@ -170,7 +170,7 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 ## T018 — E2E tests (Playwright) — all 5 scenarios
 
 - [x] `tests/e2e/cursor-happy-path.spec.ts` — Scenario A from `spec.md`
-- [ ] `tests/e2e/cursor-reduced-motion.spec.ts` — Scenario B; use Playwright `emulateMedia({ reducedMotion: 'reduce' })`
+- [x] `tests/e2e/cursor-reduced-motion.spec.ts` — Scenario B; use Playwright `emulateMedia({ reducedMotion: 'reduce' })`
 - [ ] `tests/e2e/cursor-skip.spec.ts` — Scenario C
 - [ ] `tests/e2e/cursor-mobile.spec.ts` — Scenario D; use iPhone 12 device descriptor; assert no three chunk loaded via `page.route`
 - [ ] `tests/e2e/cursor-api-down.spec.ts` — Scenario E; mock `/api/head-commit` to 500
