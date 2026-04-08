@@ -105,13 +105,13 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T011 — Pipeline scene + scroll flythrough
 
-- [ ] Create `src/lib/constants/pipeline-nodes.ts` with `export const PIPELINE_NODES = ['SPECIFY','PLAN','TASKS','IMPLEMENT','PR','CI','PREVIEW','DEPLOY'] as const;` (verbatim, exempt from i18n per spec answer 3)
-- [ ] `src/components/cursor/pipeline-scene.tsx` — a column of 8 `<PipelineNode />` positioned at increasing Y; imports labels from `@/lib/constants/pipeline-nodes` and maps over `PIPELINE_NODES`. No inline node-label strings in this component.
-- [ ] `src/components/cursor/pipeline-node.tsx` — glowing torus + billboarded text label (from drei `<Text />`); receives label as a prop, never hardcodes one
-- [ ] 8th node replaces torus with a Vercel logo (imported SVG, extruded via `SVGLoader` + `ExtrudeGeometry`)
-- [ ] `src/lib/animations/cursor-scroll-timeline.ts` — ScrollTrigger timeline that scrubs camera Y position and lights each node at the right progress percentage
-- [ ] Lenis integration: `lenis.on('scroll', ScrollTrigger.update)` + `ScrollTrigger.scrollerProxy` setup
-- [ ] Visual confirmation on localhost: scrolling flies the camera through the 8 nodes
+- [x] Create `src/lib/constants/pipeline-nodes.ts` with `export const PIPELINE_NODES = ['SPECIFY','PLAN','TASKS','IMPLEMENT','PR','CI','PREVIEW','DEPLOY'] as const;` (verbatim, exempt from i18n per spec answer 3)
+- [x] `src/components/cursor/pipeline-scene.tsx` — a column of 8 `<PipelineNode />` positioned at increasing Y; imports labels from `@/lib/constants/pipeline-nodes` and maps over `PIPELINE_NODES`. No inline node-label strings in this component.
+- [x] `src/components/cursor/pipeline-node.tsx` — glowing torus + billboarded text label (from drei `<Text />`); receives label as a prop, never hardcodes one
+- [x] 8th node replaces torus with a Vercel logo (imported SVG, extruded via `SVGLoader` + `ExtrudeGeometry`)
+- [x] `src/lib/animations/cursor-scroll-timeline.ts` — ScrollTrigger timeline that scrubs camera Y position and lights each node at the right progress percentage
+- [x] Lenis integration: `lenis.on('scroll', ScrollTrigger.update)` + `ScrollTrigger.scrollerProxy` setup
+- [x] Visual confirmation on localhost: scrolling flies the camera through the 8 nodes
 
 ## T012 — White flash + hero reveal handoff
 
