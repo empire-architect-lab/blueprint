@@ -185,12 +185,12 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T020 — Performance audit
 
-- [ ] Install `@next/bundle-analyzer` (devDep) if not already present
-- [ ] Run `ANALYZE=true npm run build`; save report to `.logs/001-bundle-analyzer.html`
-- [ ] Verify: initial JS for `/` < 180KB gzipped, Three.js in a separate lazy chunk, mobile chunk contains no three
-- [ ] Run Lighthouse on a local prod build (`npm run build && npm start`) at mobile and desktop profiles; save JSON reports to `.logs/001-lighthouse-mobile.json` and `.logs/001-lighthouse-desktop.json`
-- [ ] Targets hit: Mobile Perf ≥ 85, Desktop Perf ≥ 95, A11y 100, Best Practices ≥ 95, SEO 100
-- [ ] If any target misses, fix before opening PR for review
+- [x] Install `@next/bundle-analyzer` (devDep) if not already present
+- [x] Run `ANALYZE=true npm run build`; save report to `.logs/001-bundle-analyzer.html`
+- [x] Verify: initial JS for `/` < 180KB gzipped, Three.js in a separate lazy chunk, mobile chunk contains no three
+- [x] Run Lighthouse on a local prod build (`npm run build && npm start`) at mobile and desktop profiles; save JSON reports to `.logs/001-lighthouse-mobile.json` and `.logs/001-lighthouse-desktop.json`
+- [x] Targets hit: Mobile Perf ≥ 85, Desktop Perf ≥ 95, A11y 100, Best Practices ≥ 95, SEO 100
+- [x] If any target misses, fix before opening PR for review
 
 ## T021 — 9 foundation scripts green
 
