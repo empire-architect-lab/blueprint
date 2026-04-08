@@ -151,10 +151,10 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T016 — Homepage integration
 
-- [ ] `src/app/page.tsx` — replace Next's default template
-- [ ] Renders `<main className="min-h-screen bg-black text-white">` containing `<CinematicRouter />` and `<Hero />` (the router decides which is visible)
-- [ ] Set page metadata: title "Blueprint Lab", description per ROADMAP pitch
-- [ ] `npm run dev` and manually walk through all 4 paths: desktop motion on, desktop reduced motion, mobile motion on, JS disabled in DevTools
+- [x] `src/app/page.tsx` — replace Next's default template
+- [x] Renders `<main className="min-h-screen bg-black text-white">` containing `<CinematicRouter />` and `<Hero />` (the router decides which is visible)
+- [x] Set page metadata: title "Blueprint Lab", description per ROADMAP pitch
+- [x] `npm run dev` and manually walk through all 4 paths: desktop motion on, desktop reduced motion, mobile motion on, JS disabled in DevTools
 
 ## T017 — Observability wiring
 
