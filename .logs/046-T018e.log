@@ -1,0 +1,42 @@
+
+> blueprint@0.1.0 typecheck
+> tsc --noEmit
+
+
+> blueprint@0.1.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> blueprint@0.1.0 test:e2e
+> playwright test
+
+
+Running 6 tests using 6 workers
+
+  ok 1 [chromium] › e2e\cursor-happy-path.spec.ts:14:5 › Scenario A — cinematic happy path reveals hero + replay (713ms)
+  ok 2 [chromium] › e2e\cursor-reduced-motion.spec.ts:8:5 › Scenario B — reduced-motion reveals hero immediately (732ms)
+  ok 4 [chromium] › e2e\cursor-api-down.spec.ts:10:5 › Scenario E — head-commit API down still reveals hero (712ms)
+  ok 6 [chromium] › e2e\home.spec.ts:4:5 › home page renders and is accessible (927ms)
+  ok 5 [chromium] › e2e\cursor-skip.spec.ts:4:5 › Scenario C — skip link keyboard shortcut reveals hero fast (1.8s)
+  ok 3 [chromium] › e2e\cursor-mobile.spec.ts:13:5 › Scenario D — mobile cinematic plays without three.js and reveals hero (7.4s)
+
+  6 passed (8.3s)
+
+> blueprint@0.1.0 scan:secrets
+> gitleaks detect --no-banner
+
+[90m4:03AM[0m [32mINF[0m 77 commits scanned.
+[90m4:03AM[0m [32mINF[0m scan completed in 209ms
+[90m4:03AM[0m [32mINF[0m no leaks found
+
+> blueprint@0.1.0 scan:forbidden
+> bash scripts/check-forbidden-terms.sh
+
+check-forbidden-terms: OK
+
+> blueprint@0.1.0 scan:i18n
+> bash scripts/check-i18n.sh
+
+check-i18n: OK
