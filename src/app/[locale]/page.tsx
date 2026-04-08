@@ -1,10 +1,16 @@
-import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { CinematicRouter } from "@/components/cursor/cinematic-router";
 
-export default function Home() {
-  const t = useTranslations("home");
+export const metadata: Metadata = {
+  title: "Blueprint Lab",
+  description:
+    "The practice dashboard built by the spec-driven process it teaches.",
+};
+
+export default function LocaleHomePage() {
   return (
-    <main className="flex flex-1 items-center justify-center p-16">
-      <h1 className="text-4xl font-semibold tracking-tight">{t("title")}</h1>
+    <main className="min-h-screen bg-black text-white">
+      <CinematicRouter />
     </main>
   );
 }

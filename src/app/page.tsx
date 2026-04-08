@@ -1,16 +1,8 @@
-import type { Metadata } from "next";
-import { CinematicRouter } from "@/components/cursor/cinematic-router";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Blueprint Lab",
-  description:
-    "The practice dashboard built by the spec-driven process it teaches.",
-};
-
-export default function HomePage() {
-  return (
-    <main className="min-h-screen bg-black text-white">
-      <CinematicRouter />
-    </main>
-  );
+// next-intl middleware normally redirects "/" to the default locale before
+// this file is reached. This stays as a no-op fallback in case the middleware
+// matcher ever changes.
+export default function RootPage() {
+  redirect("/en");
 }

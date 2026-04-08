@@ -7,10 +7,10 @@ vi.mock("@/components/cursor/cinematic-router", () => ({
 
 afterEach(() => cleanup());
 
-describe("HomePage", () => {
+describe("LocaleHomePage", () => {
   it("renders <main> with the cinematic router mounted", async () => {
-    const { default: HomePage } = await import("@/app/page");
-    const { container, getByTestId } = render(<HomePage />);
+    const { default: LocaleHomePage } = await import("@/app/[locale]/page");
+    const { container, getByTestId } = render(<LocaleHomePage />);
     const main = container.querySelector("main");
     expect(main).not.toBeNull();
     expect(main?.className).toContain("min-h-screen");
@@ -20,7 +20,7 @@ describe("HomePage", () => {
   });
 
   it("exports the expected metadata", async () => {
-    const mod = await import("@/app/page");
+    const mod = await import("@/app/[locale]/page");
     expect(mod.metadata.title).toBe("Blueprint Lab");
     expect(typeof mod.metadata.description).toBe("string");
   });

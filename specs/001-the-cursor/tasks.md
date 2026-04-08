@@ -151,6 +151,11 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T016 — Homepage integration
 
+> **T016b fix:** the next-intl middleware redirects `/` → `/[locale]` before
+> `src/app/page.tsx` is hit, so the cinematic mount was moved to
+> `src/app/[locale]/page.tsx` (task 038). The root file stays as a no-op
+> redirect fallback.
+
 - [x] `src/app/page.tsx` — replace Next's default template
 - [x] Renders `<main className="min-h-screen bg-black text-white">` containing `<CinematicRouter />` and `<Hero />` (the router decides which is visible)
 - [x] Set page metadata: title "Blueprint Lab", description per ROADMAP pitch
