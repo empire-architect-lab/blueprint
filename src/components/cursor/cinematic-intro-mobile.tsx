@@ -24,6 +24,12 @@ export function CinematicIntroMobile() {
   const [litIndex, setLitIndex] = useState(-1);
 
   useEffect(() => {
+    if (beat !== "map") return;
+    const id = setTimeout(() => setBeat("pipeline"), 1800);
+    return () => clearTimeout(id);
+  }, [beat]);
+
+  useEffect(() => {
     if (beat !== "pipeline") return;
     let i = 0;
     const id = setInterval(() => {
@@ -63,6 +69,7 @@ export function CinematicIntroMobile() {
       {beat === "map" && (
         <div className="flex min-h-screen flex-col items-center justify-center px-6">
           <svg
+            data-role="earth-mobile"
             viewBox="0 0 460 200"
             className="w-full max-w-md"
             aria-hidden="true"
