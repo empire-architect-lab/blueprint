@@ -27,9 +27,9 @@ export function StatCounter({
     const node = ref.current;
     if (!node) return;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
     if (prefersReduced) {
       frame = requestAnimationFrame(() => setValue(to));
@@ -47,6 +47,13 @@ export function StatCounter({
       setValue(from + (to - from) * eased);
       if (t < 1) frame = requestAnimationFrame(run);
     };
+
+    if (typeof IntersectionObserver === "undefined") {
+      frame = requestAnimationFrame(() => setValue(to));
+      return () => {
+        if (frame) cancelAnimationFrame(frame);
+      };
+    }
 
     const io = new IntersectionObserver(
       (entries) => {

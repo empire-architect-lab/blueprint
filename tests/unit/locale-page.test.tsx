@@ -9,6 +9,10 @@ vi.mock("next-intl/server", () => ({
   },
 }));
 
+vi.mock("@/components/hero/hero", () => ({
+  Hero: () => <div data-testid="hero-stub">hero</div>,
+}));
+
 afterEach(() => cleanup());
 
 describe("LocaleHomePage", () => {
