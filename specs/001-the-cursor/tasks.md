@@ -163,9 +163,9 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T017 — Observability wiring
 
-- [ ] In `<CinematicRouter />`, fire Plausible event `cinematic_completed` on hero reveal, `cinematic_skipped` on skip
-- [ ] Confirm Sentry is capturing errors — throw a test error inside `<CinematicIntro />` in dev behind a keypress `e`, verify it appears in the Sentry dashboard, remove the throw
-- [ ] No PII in either event payload (reviewed manually)
+- [x] In `<CinematicRouter />`, fire Plausible event `cinematic_completed` on hero reveal, `cinematic_skipped` on skip
+- [x] Confirm Sentry is capturing errors — throw a test error inside `<CinematicIntro />` in dev behind a keypress `e`, verify it appears in the Sentry dashboard, remove the throw
+- [x] No PII in either event payload (reviewed manually)
 
 ## T018 — E2E tests (Playwright) — all 5 scenarios
 

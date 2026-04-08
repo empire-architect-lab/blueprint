@@ -8,6 +8,7 @@ import { useIsMobile } from "@/lib/hooks/use-is-mobile";
 import { Hero } from "@/components/hero/hero";
 import { CINEMATIC_COMPLETE_EVENT } from "@/components/cursor/white-flash";
 import { CINEMATIC_REPLAY_EVENT } from "@/components/hero/replay-button";
+import { track } from "@/lib/analytics/plausible";
 
 export const CINEMATIC_SKIP_EVENT = "blueprint:cinematic-skip";
 
@@ -40,8 +41,14 @@ export function CinematicRouter() {
   const [mode, setMode] = useState<Mode>("cinematic");
 
   useEffect(() => {
-    const onSkip = () => setMode("hero");
-    const onComplete = () => setMode("hero");
+    const onSkip = () => {
+      track("cinematic_skipped");
+      setMode("hero");
+    };
+    const onComplete = () => {
+      track("cinematic_completed");
+      setMode("hero");
+    };
     const onReplay = () => setMode("cinematic");
     window.addEventListener(CINEMATIC_SKIP_EVENT, onSkip);
     window.addEventListener(CINEMATIC_COMPLETE_EVENT, onComplete);
