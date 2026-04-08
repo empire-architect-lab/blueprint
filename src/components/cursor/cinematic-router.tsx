@@ -6,6 +6,7 @@ import { useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useIsMobile } from "@/lib/hooks/use-is-mobile";
 import { Hero } from "@/components/hero/hero";
+import { SkipLink } from "@/components/cursor/skip-link";
 import { CINEMATIC_COMPLETE_EVENT } from "@/components/cursor/white-flash";
 import { CINEMATIC_REPLAY_EVENT } from "@/components/hero/replay-button";
 import { track } from "@/lib/analytics/plausible";
@@ -78,5 +79,10 @@ export function CinematicRouter() {
     return <Hero />;
   }
 
-  return isMobile ? <CinematicIntroMobile /> : <CinematicIntro />;
+  return (
+    <>
+      {isMobile ? <CinematicIntroMobile /> : <CinematicIntro />}
+      <SkipLink />
+    </>
+  );
 }
