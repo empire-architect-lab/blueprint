@@ -1,0 +1,328 @@
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+> Environment Variables found for nacirizak-7822s-projects/blueprint [334ms]
+
+ name                                       value               environments (git branch)           created    
+ SENTRY_PROJECT                             Encrypted           Preview                             18h ago    
+ SENTRY_ORG                                 Encrypted           Preview                             18h ago    
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Preview                             18h ago    
+ SENTRY_DSN                                 Encrypted           Preview                             18h ago    
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Preview                             18h ago    
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Preview (chore/000-foundation)      18h ago    
+ SENTRY_PROJECT                             Encrypted           Development                         18h ago    
+ SENTRY_ORG                                 Encrypted           Development                         18h ago    
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Development                         18h ago    
+ SENTRY_DSN                                 Encrypted           Development                         18h ago    
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Development                         18h ago    
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Development                         18h ago    
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`
+=== rm NEXT_PUBLIC_SENTRY_DSN production ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+{
+  "status": "error",
+  "reason": "env_not_found",
+  "message": "Environment Variable NEXT_PUBLIC_SENTRY_DSN was not found."
+}
+=== add NEXT_PUBLIC_SENTRY_DSN production ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [274ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+=== rm NEXT_PUBLIC_SENTRY_DSN preview ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Removing
+Removed Environment Variable [262ms]
+=== add NEXT_PUBLIC_SENTRY_DSN preview ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+=== rm NEXT_PUBLIC_SENTRY_DSN development ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Removing
+Removed Environment Variable [262ms]
+=== add NEXT_PUBLIC_SENTRY_DSN development ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [273ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+=== rm SENTRY_DSN production ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+{
+  "status": "error",
+  "reason": "env_not_found",
+  "message": "Environment Variable SENTRY_DSN was not found."
+}
+=== add SENTRY_DSN production ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [278ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+=== rm SENTRY_DSN preview ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Removing
+Removed Environment Variable [256ms]
+=== add SENTRY_DSN preview ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+=== rm SENTRY_DSN development ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Removing
+Removed Environment Variable [254ms]
+=== add SENTRY_DSN development ===
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [280ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add NEXT_PUBLIC_SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add NEXT_PUBLIC_SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+{
+  "status": "action_required",
+  "reason": "git_branch_required",
+  "message": "Add SENTRY_DSN to which Git branch for Preview? Pass branch as third argument, or omit for all Preview branches.",
+  "next": [
+    {
+      "command": "vercel env add SENTRY_DSN preview <gitbranch> --value <value> --yes",
+      "when": "Add to a specific Git branch"
+    },
+    {
+      "command": "vercel env add SENTRY_DSN preview --value <value> --yes",
+      "when": "Add to all Preview branches"
+    }
+  ],
+  "hint": "Run one of the commands in next[] to complete without prompting."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+> Environment Variables found for nacirizak-7822s-projects/blueprint [268ms]
+
+ name                                       value               environments (git branch)           created    
+ SENTRY_DSN                                 Encrypted           Development                         17s ago    
+ SENTRY_DSN                                 Encrypted           Production                          28s ago    
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Development                         34s ago    
+ NEXT_PUBLIC_SENTRY_DSN                     Encrypted           Production                          46s ago    
+ SENTRY_PROJECT                             Encrypted           Preview                             18h ago    
+ SENTRY_ORG                                 Encrypted           Preview                             18h ago    
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Preview                             18h ago    
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Preview (chore/000-foundation)      18h ago    
+ SENTRY_PROJECT                             Encrypted           Development                         18h ago    
+ SENTRY_ORG                                 Encrypted           Development                         18h ago    
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY       Encrypted           Development                         18h ago    
+ NEXT_PUBLIC_SUPABASE_URL                   Encrypted           Development                         18h ago    
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [631ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [296ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+{
+  "status": "error",
+  "reason": "branch_not_found",
+  "message": "Branch \"fix/055-sentry-dsn-vercel\" not found in the connected Git repository."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+{
+  "status": "error",
+  "reason": "branch_not_found",
+  "message": "Branch \"fix/055-sentry-dsn-vercel\" not found in the connected Git repository."
+}
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+WARNING! NEXT_PUBLIC_ variables can be seen by anyone visiting your site
+Retrieving project…
+Saving
+Added Environment Variable NEXT_PUBLIC_SENTRY_DSN to Project blueprint [494ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+Retrieving project…
+Saving
+Added Environment Variable SENTRY_DSN to Project blueprint [290ms]
+Common next commands:
+- `vercel env ls`
+- `vercel env pull`
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Fetching deployments in nacirizak-7822s-projects
+> Deployments for nacirizak-7822s-projects/blueprint [248ms]
+
+  Age     Project                                Deployment                                                          Status         Environment     Duration     Username           
+  36s     nacirizak-7822s-projects/blueprint     https://blueprint-q9fih26sh-nacirizak-7822s-projects.vercel.app     ● Building     Preview         --           nacirizak-7822     
+  1m      nacirizak-7822s-projects/blueprint     https://blueprint-k4jstlft4-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         45s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-5zjnem7ta-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         39s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-e202xbvp1-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         41s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-dfsfeno2i-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         44s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-53dhzi25z-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         41s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-1jy3qrurl-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         39s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-5to6hcymh-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         44s          nacirizak-7822     
+  7h      nacirizak-7822s-projects/blueprint     https://blueprint-ne8za3t6a-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         39s          nacirizak-7822     
+  7h      nacirizak-7822s-projects/blueprint     https://blueprint-44oimd4hh-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         45s          nacirizak-7822     
+  7h      nacirizak-7822s-projects/blueprint     https://blueprint-b47ebcdlj-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         41s          nacirizak-7822     
+  7h      nacirizak-7822s-projects/blueprint     https://blueprint-9sciwn044-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         47s          nacirizak-7822     
+  8h      nacirizak-7822s-projects/blueprint     https://blueprint-69m72qqhm-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         42s          nacirizak-7822     
+  8h      nacirizak-7822s-projects/blueprint     https://blueprint-q9w8lgno0-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         43s          nacirizak-7822     
+  8h      nacirizak-7822s-projects/blueprint     https://blueprint-1duqal86d-nacirizak-7822s-projects.vercel.app     ● Ready        Preview         39s          nacirizak-7822     
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Fetching deployments in nacirizak-7822s-projects
+> Deployments for nacirizak-7822s-projects/blueprint [273ms]
+
+  Age     Project                                Deployment                                                          Status      Environment     Duration     Username           
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Fetching deployments in nacirizak-7822s-projects
+> Deployments for nacirizak-7822s-projects/blueprint [246ms]
+
+  Age     Project                                Deployment                                                          Status      Environment     Duration     Username           
+  2m      nacirizak-7822s-projects/blueprint     https://blueprint-q9fih26sh-nacirizak-7822s-projects.vercel.app     ● Ready     Preview         42s          nacirizak-7822     
+  2m      nacirizak-7822s-projects/blueprint     https://blueprint-k4jstlft4-nacirizak-7822s-projects.vercel.app     ● Ready     Preview         45s          nacirizak-7822     
+  6h      nacirizak-7822s-projects/blueprint     https://blueprint-5zjnem7ta-nacirizak-7822s-projects.vercel.app     ● Ready     Preview         39s          nacirizak-7822     
+HTTP/1.1 401 Unauthorized
+Cache-Control: no-store, max-age=0
+Content-Length: 14579
+Content-Type: text/html; charset=utf-8
+Date: Wed, 08 Apr 2026 11:09:28 GMT
+Server: Vercel
+Set-Cookie: _vercel_sso_nonce=678a3eb0f9a85a287be7679b395fc4f755d91a2793158b11; Max-Age=3600; Path=/; Secure; HttpOnly; SameSite=Lax
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Frame-Options: DENY
+X-Robots-Tag: noindex
+X-Vercel-Id: cdg1::j86l5-1775646568591-d5ca79d762bb
+
+HTTP:401 size:14579
+0
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Fetching deployment "blueprint-q9fih26sh-nacirizak-7822s-projects.vercel.app" in nacirizak-7822s-projects
+> Fetched deployment "blueprint-q9fih26sh-nacirizak-7822s-projects.vercel.app" in nacirizak-7822s-projects [883ms]
+
+  General
+
+    id		dpl_CFfDwFRDBsgKXw1cfftVnRJte1BZ
+    name	blueprint
+    target	preview
+    status	● Ready
+    url		https://blueprint-q9fih26sh-nacirizak-7822s-projects.vercel.app
+    created	Wed Apr 08 2026 12:07:14 GMT+0100 (GMT+01:00) [3m ago]
+
+
+  Aliases
+
+    ╶ https://blueprint-git-fix-055-sentry-ds-1c4582-nacirizak-7822s-projects.vercel.app
+    
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ _not-found (963.64KB) [iad1]
+    ├── λ _not-found.rsc (963.64KB) [iad1]
+    ├── λ [locale] (963.64KB) [iad1]
+    ├── λ [locale].rsc (963.64KB) [iad1]
+    ├── λ [locale]/earth-preview (963.64KB) [iad1]
+    └── 76 output items hidden
+    
+
