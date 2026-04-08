@@ -206,7 +206,7 @@ All boxes below checked in the same commits that implement them (Principle 10). 
 
 ## T022 — PR, preview URL, Opus verification
 
-- [ ] Open implementation PR from `feat/001-the-cursor` → `main` (draft initially)
+- [x] Open implementation PR from `feat/001-the-cursor` → `main` (draft initially)
 - [ ] Wait for CI green
 - [ ] Vercel preview URL in the PR description
 - [ ] Flip PR to ready-for-review
